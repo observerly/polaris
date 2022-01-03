@@ -1,6 +1,14 @@
 {
-  "name": "polaris",
+  "name": "@observerly/polaris",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/observerly/polaris"
+  },
+  "prepublish": "tsc",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/observerly"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
