@@ -1,8 +1,8 @@
 bracketSpacing: true
-printWidth: 110
+printWidth: 100
 semi: false
-trailingComma: "none"
+trailingComma: 'none'
 singleQuote: true
 tabWidth: 2
 useTabs: false
-arrowParens: "avoid"
+arrowParens: 'avoid'
