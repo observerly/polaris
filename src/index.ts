@@ -1,2 +1,2 @@
 // Epoch
-export { getJulianDate, getJulianYearInSeconds } from './epoch'
+export { getJulianDate, getJulianYearInSeconds, getModifiedJulianDate } from './epoch'
