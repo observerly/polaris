@@ -1,3 +1,3 @@
 # Polaris
 
-Polaris is a Typescript Client library for performing astrometric and astronomical calculations.
+Polaris is a fully tree-shakeable Javascript library for performing astrometric and astronomical calculations.
