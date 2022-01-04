@@ -1,5 +1,7 @@
 export { getCurrentYearEnd } from './getCurrentYearEnd'
 
+export { getCurrentYearStart } from './getCurrentYearStart'
+
 export { getGreenwhichSiderealTime } from './getGreenwhichSiderealTime'
 
 export { getJulianDate } from './getJulianDate'

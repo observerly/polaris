@@ -7,6 +7,7 @@ export { convertEquatorialToHorizontal, convertHorizontalToEquatorial } from './
 // Epoch
 export {
   getCurrentYearEnd,
+  getCurrentYearStart,
   getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,

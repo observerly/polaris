@@ -4,6 +4,7 @@ import { datetime, longitude } from '.'
 
 import {
   getCurrentYearEnd,
+  getCurrentYearStart,
   getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,
@@ -15,6 +16,15 @@ import {
 
 suite('@observerly/polaris Epoch', () => {
   describe('Current Year', () => {
+    it('getCurrentYearStart should be defined', () => {
+      expect(getCurrentYearStart).toBeDefined()
+    })
+
+    it('getCurrentYearStart should be 1st January', () => {
+      const yearStart = getCurrentYearStart(datetime)
+      expect(yearStart.toISOString()).toBe('2021-01-01T00:00:00.000Z')
+    })
+
     it('getCurrentYearEnd should be defined', () => {
       expect(getCurrentYearEnd).toBeDefined()
     })
