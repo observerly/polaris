@@ -1,5 +1,6 @@
 // Epoch
 export {
+  getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,
   getModifiedJulianDate,

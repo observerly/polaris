@@ -3,6 +3,7 @@ import { describe, expect, it, suite } from 'vitest'
 import { datetime } from '.'
 
 import {
+  getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,
   getModifiedJulianDate,
@@ -61,6 +62,17 @@ suite('@observerly/polaris Epoch', () => {
     it('getNumberOfJulianCenturiesSinceEpoch2000 should be', () => {
       const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
       expect(T).toBe(0.21364818617385353)
+    })
+  })
+
+  describe('Greenwhich Sidereal Time', () => {
+    it('getGreenwhichSiderealTime should be defined', () => {
+      expect(getGreenwhichSiderealTime).toBeDefined()
+    })
+
+    it('getGreenwhichSiderealTime should be', () => {
+      const GST = getGreenwhichSiderealTime(datetime)
+      expect(GST).toBe(15.463990399019053)
     })
   })
 })
