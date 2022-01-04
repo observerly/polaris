@@ -1,1 +1,5 @@
-export type { EquatorialCoordinate } from './coordinates'
+export type {
+  EquatorialCoordinate,
+  GeographicCoordinate,
+  HorizontalCoordinate
+} from './coordinates'
