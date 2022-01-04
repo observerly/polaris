@@ -6,7 +6,8 @@ import {
   getJulianDate,
   getJulianYearInSeconds,
   getModifiedJulianDate,
-  getNumberOfJulianCenturiesSinceEpoch1900
+  getNumberOfJulianCenturiesSinceEpoch1900,
+  getNumberOfJulianCenturiesSinceEpoch2000
 } from '../'
 
 suite('@observerly/polaris Epoch', () => {
@@ -51,6 +52,15 @@ suite('@observerly/polaris Epoch', () => {
     it('getNumberOfJulianCenturiesSinceEpoch1900 should be defined', () => {
       const T = getNumberOfJulianCenturiesSinceEpoch1900(datetime)
       expect(T).toBe(1.2136481861738535)
+    })
+
+    it('getNumberOfJulianCenturiesSinceEpoch2000 should be defined', () => {
+      expect(getNumberOfJulianCenturiesSinceEpoch2000).toBeDefined()
+    })
+
+    it('getNumberOfJulianCenturiesSinceEpoch2000 should be defined', () => {
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+      expect(T).toBe(0.21364818617385353)
     })
   })
 })
