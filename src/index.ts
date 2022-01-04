@@ -17,6 +17,9 @@ export {
   getNumberOfJulianCenturiesSinceEpoch2000
 } from './epoch'
 
+// Lunar
+export { getLunarMeanLongitude } from './lunar'
+
 // Types
 export type { EquatorialCoordinate, GeographicCoordinate, HorizontalCoordinate } from './types'
 
