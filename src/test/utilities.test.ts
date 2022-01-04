@@ -24,7 +24,7 @@ suite('@observerly/polaris Utilities', () => {
     })
   })
 
-  describe('Radian To Degree Convserion', () => {
+  describe('Radian To Degree Convsersion', () => {
     it('convertRadianToDegree should be defined', () => {
       expect(convertRadianToDegree).toBeDefined()
     })

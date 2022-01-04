@@ -10,7 +10,7 @@ suite('@observerly/polaris Astrometry', () => {
       expect(getHourAngle).toBeDefined()
     })
 
-    it('getHourAngle should be defined', () => {
+    it('getHourAngle should be', () => {
       const LST = getLocalSiderealTime(datetime, longitude)
       const ha = getHourAngle(betelgeuse.ra, LST)
       expect(ha).toBe(347.6988036852858)
