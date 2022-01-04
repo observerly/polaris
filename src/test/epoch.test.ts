@@ -49,7 +49,7 @@ suite('@observerly/polaris Epoch', () => {
       expect(getNumberOfJulianCenturiesSinceEpoch1900).toBeDefined()
     })
 
-    it('getNumberOfJulianCenturiesSinceEpoch1900 should be defined', () => {
+    it('getNumberOfJulianCenturiesSinceEpoch1900 should be', () => {
       const T = getNumberOfJulianCenturiesSinceEpoch1900(datetime)
       expect(T).toBe(1.2136481861738535)
     })
@@ -58,7 +58,7 @@ suite('@observerly/polaris Epoch', () => {
       expect(getNumberOfJulianCenturiesSinceEpoch2000).toBeDefined()
     })
 
-    it('getNumberOfJulianCenturiesSinceEpoch2000 should be defined', () => {
+    it('getNumberOfJulianCenturiesSinceEpoch2000 should be', () => {
       const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
       expect(T).toBe(0.21364818617385353)
     })
