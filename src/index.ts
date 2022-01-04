@@ -2,7 +2,7 @@
 export { getHourAngle } from './astrometry'
 
 // Coordinates
-export { convertEquatorialToHorizontal } from './coordinates'
+export { convertEquatorialToHorizontal, convertHorizontalToEquatorial } from './coordinates'
 
 // Epoch
 export {
