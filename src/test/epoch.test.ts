@@ -3,6 +3,7 @@ import { describe, expect, it, suite } from 'vitest'
 import { datetime, longitude } from '.'
 
 import {
+  getCurrentYearEnd,
   getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,
@@ -13,6 +14,17 @@ import {
 } from '../'
 
 suite('@observerly/polaris Epoch', () => {
+  describe('Current Year', () => {
+    it('getCurrentYearEnd should be defined', () => {
+      expect(getCurrentYearEnd).toBeDefined()
+    })
+
+    it('getCurrentYearEnd should be 31st December', () => {
+      const yearEnd = getCurrentYearEnd(datetime)
+      expect(yearEnd.toISOString()).toBe('2021-12-31T00:00:00.000Z')
+    })
+  })
+
   describe('Julian Year', () => {
     it('getJulianYearInSeconds should be defined', () => {
       expect(getJulianYearInSeconds).toBeDefined()
