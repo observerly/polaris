@@ -14,3 +14,6 @@ export {
 
 // Types
 export type { EquatorialCoordinate } from './types'
+
+// Utilities
+export { convertDegreeToRadian } from './utilities'
