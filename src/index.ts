@@ -1,3 +1,6 @@
+// Astrometry
+export { getHourAngle } from './astrometry'
+
 // Epoch
 export {
   getGreenwhichSiderealTime,
@@ -8,3 +11,6 @@ export {
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from './epoch'
+
+// Types
+export type { EquatorialCoordinate } from './types'
