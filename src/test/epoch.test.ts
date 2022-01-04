@@ -1,11 +1,12 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { datetime } from '.'
+import { datetime, longitude } from '.'
 
 import {
   getGreenwhichSiderealTime,
   getJulianDate,
   getJulianYearInSeconds,
+  getLocalSiderealTime,
   getModifiedJulianDate,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000
@@ -73,6 +74,17 @@ suite('@observerly/polaris Epoch', () => {
     it('getGreenwhichSiderealTime should be', () => {
       const GST = getGreenwhichSiderealTime(datetime)
       expect(GST).toBe(15.463990399019053)
+    })
+  })
+
+  describe('Local Sidereal Time', () => {
+    it('getLocalSiderealTime should be defined', () => {
+      expect(getLocalSiderealTime).toBeDefined()
+    })
+
+    it('getLocalSiderealTime should be', () => {
+      const LST = getLocalSiderealTime(datetime, longitude)
+      expect(LST).toBe(5.099450799019053)
     })
   })
 })
