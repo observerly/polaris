@@ -2,7 +2,12 @@ import { describe, expect, it, suite } from 'vitest'
 
 import { datetime } from '.'
 
-import { getJulianDate, getJulianYearInSeconds, getModifiedJulianDate } from '../'
+import {
+  getJulianDate,
+  getJulianYearInSeconds,
+  getModifiedJulianDate,
+  getNumberOfJulianCenturiesSinceEpoch1900
+} from '../'
 
 suite('@observerly/polaris Epoch', () => {
   describe('Julian Year', () => {
@@ -35,6 +40,17 @@ suite('@observerly/polaris Epoch', () => {
     it('getModifiedJulianDate should be', () => {
       const modifiedJulianDate = getModifiedJulianDate(datetime)
       expect(modifiedJulianDate).toBe(59348)
+    })
+  })
+
+  describe('Number Of Centuries Since Epoch', () => {
+    it('getNumberOfJulianCenturiesSinceEpoch1900 should be defined', () => {
+      expect(getNumberOfJulianCenturiesSinceEpoch1900).toBeDefined()
+    })
+
+    it('getNumberOfJulianCenturiesSinceEpoch1900 should be defined', () => {
+      const T = getNumberOfJulianCenturiesSinceEpoch1900(datetime)
+      expect(T).toBe(1.2136481861738535)
     })
   })
 })
