@@ -1,6 +1,6 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { convertDegreeToRadian, convertRadianToDegree } from '../'
+import { convertDegreeToRadian, convertRadianToDegree, getNormalisedDegree } from '../'
 
 suite('@observerly/polaris Utilities', () => {
   describe('Degree to Radian Convserion', () => {
@@ -42,6 +42,32 @@ suite('@observerly/polaris Utilities', () => {
     it('convertRadianToDegree should be precise', () => {
       const degree = convertRadianToDegree(0.7996924099712819)
       expect(degree).toBe(45.819)
+    })
+  })
+
+  describe('Normalised Degree To Full Rotation', () => {
+    it('getNormalisedDegree should be defined', () => {
+      expect(getNormalisedDegree).toBeDefined()
+    })
+
+    it('getNormalisedDegree should not be applied', () => {
+      const degree = getNormalisedDegree(45)
+      expect(degree).toBe(45)
+    })
+
+    it('getNormalisedDegree should be able to handle negative angles', () => {
+      const degree = getNormalisedDegree(-45)
+      expect(degree).toBe(315)
+    })
+
+    it('getNormalisedDegree should be able to handle large angles', () => {
+      const degree = getNormalisedDegree(488)
+      expect(degree).toBe(128)
+    })
+
+    it('getNormalisedDegree should be able to multiple rotations', () => {
+      const degree = getNormalisedDegree(2880)
+      expect(degree).toBe(0)
     })
   })
 })
