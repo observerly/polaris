@@ -16,4 +16,9 @@ export {
 export type { EquatorialCoordinate } from './types'
 
 // Utilities
-export { convertDegreeToRadian, convertRadianToDegree, getNormalisedDegree } from './utilities'
+export {
+  convertDegreeToHour,
+  convertDegreeToRadian,
+  convertRadianToDegree,
+  getNormalisedDegree
+} from './utilities'

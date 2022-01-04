@@ -1,6 +1,11 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { convertDegreeToRadian, convertRadianToDegree, getNormalisedDegree } from '../'
+import {
+  convertDegreeToHour,
+  convertDegreeToRadian,
+  convertRadianToDegree,
+  getNormalisedDegree
+} from '../'
 
 suite('@observerly/polaris Utilities', () => {
   describe('Degree to Radian Convserion', () => {
@@ -68,6 +73,27 @@ suite('@observerly/polaris Utilities', () => {
     it('getNormalisedDegree should be able to multiple rotations', () => {
       const degree = getNormalisedDegree(2880)
       expect(degree).toBe(0)
+    })
+  })
+
+  describe('Convert Degree to Hour', () => {
+    it('convertDegreeToHour should be defined', () => {
+      expect(convertDegreeToHour).toBeDefined()
+    })
+
+    it('convertDegreeToHour should be 24 hours at a full rotation', () => {
+      const hr = convertDegreeToHour(360)
+      expect(hr).toBe(24)
+    })
+
+    it('convertDegreeToHour should be 12 hours at a half rotation', () => {
+      const hr = convertDegreeToHour(180)
+      expect(hr).toBe(12)
+    })
+
+    it('convertDegreeToHour should be 3 hours at a 1/8 rotation', () => {
+      const hr = convertDegreeToHour(45)
+      expect(hr).toBe(3)
     })
   })
 })
