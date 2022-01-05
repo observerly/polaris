@@ -6,16 +6,19 @@ import {
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
+  getLunarPhase,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from '..'
+
+import { datetime } from '.'
 
 // For testing we need to specify a date because most calculations are
 // differential w.r.t a time component. We set it to the date provided
 // on p.342 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
 // Va: Willmann - Bell.:
-export const datetime = new Date('1992-04-12T00:00:00.000+00:00')
+export const d = new Date('1992-04-12T00:00:00.000+00:00')
 
-const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
 
 suite('@observerly/polaris Lunar', () => {
   describe('Lunar Argument of Latitude', () => {
@@ -68,11 +71,22 @@ suite('@observerly/polaris Lunar', () => {
     })
 
     it('getLunarEclipticPosition should be', () => {
-      const { λ, β, Λ } = getLunarEclipticPosition(datetime)
+      const { λ, β, Λ } = getLunarEclipticPosition(d)
 
       expect(λ).toBeCloseTo(133.3056352)
       expect(β).toBeCloseTo(-3.27851454)
       expect(Λ).toBeCloseTo(367875966.53360325)
+    })
+  })
+
+  describe('Lunar Phase', () => {
+    it('getLunarPhase should be defined', () => {
+      expect(getLunarPhase).toBeDefined()
+    })
+
+    it('getLunarPhase should be', () => {
+      const phase = getLunarPhase(datetime)
+      expect(phase).toBeCloseTo(0.06656)
     })
   })
 })
