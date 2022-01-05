@@ -25,6 +25,9 @@ export {
   getLunarMeanLongitude
 } from './lunar'
 
+// Terra
+export { getEarthEccentricity } from './terra'
+
 // Types
 export type { EquatorialCoordinate, GeographicCoordinate, HorizontalCoordinate } from './types'
 
