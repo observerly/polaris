@@ -25,6 +25,9 @@ export {
   getLunarMeanLongitude
 } from './lunar'
 
+// Solar
+export { getSolarMeanAnomaly } from './solar'
+
 // Terra
 export { getEarthEccentricity } from './terra'
 

@@ -1,0 +1,1 @@
+export { getSolarMeanAnomaly } from './getSolarMeanAnomaly'
