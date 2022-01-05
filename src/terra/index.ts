@@ -1,0 +1,1 @@
+export { getEarthEccentricity } from './getEarthEccentricity'
