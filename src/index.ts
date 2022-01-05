@@ -18,7 +18,12 @@ export {
 } from './epoch'
 
 // Lunar
-export { getLunarArgumentOfLatitude, getLunarMeanLongitude } from './lunar'
+export {
+  getLunarArgumentOfLatitude,
+  getLunarMeanAnomaly,
+  getLunarMeanElongation,
+  getLunarMeanLongitude
+} from './lunar'
 
 // Types
 export type { EquatorialCoordinate, GeographicCoordinate, HorizontalCoordinate } from './types'
