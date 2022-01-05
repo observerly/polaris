@@ -20,6 +20,7 @@ export {
 // Lunar
 export {
   getLunarArgumentOfLatitude,
+  getLunarEclipticPosition,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude
