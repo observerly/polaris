@@ -29,7 +29,7 @@ export {
 } from './lunar'
 
 // Solar
-export { getSolarMeanAnomaly, getSolarMeanObliquity } from './solar'
+export { getSolarGeometricMeanLongitude, getSolarMeanAnomaly, getSolarMeanObliquity } from './solar'
 
 // Terra
 export { getEarthEccentricity } from './terra'
