@@ -32,7 +32,7 @@ export {
 export { getSolarMeanAnomaly, getSolarMeanObliquity } from './solar'
 
 // Terra
-export { getEarthEccentricity } from './terra'
+export { getEarthEccentricity, getEarthObliquity } from './terra'
 
 // Types
 export type { EquatorialCoordinate, GeographicCoordinate, HorizontalCoordinate } from './types'
