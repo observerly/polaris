@@ -2,6 +2,7 @@ import { describe, expect, it, suite } from 'vitest'
 
 import {
   getLunarArgumentOfLatitude,
+  getLunarEclipticPosition,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
@@ -16,7 +17,7 @@ export const datetime = new Date('1992-04-12T00:00:00.000+00:00')
 
 const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
 
-suite('@observerly/polaris Utilities', () => {
+suite('@observerly/polaris Lunar', () => {
   describe('Lunar Argument of Latitude', () => {
     it('getLunarArgumentOfLatitude should be defined', () => {
       expect(getLunarArgumentOfLatitude).toBeDefined()
@@ -58,6 +59,20 @@ suite('@observerly/polaris Utilities', () => {
     it('getLunarMeanLongitude should be', () => {
       const L = getLunarMeanLongitude(T)
       expect(L).toBeCloseTo(134.290182)
+    })
+  })
+
+  describe('Lunar Ecliptic Position', () => {
+    it('getLunarEclipticPosition should be defined', () => {
+      expect(getLunarEclipticPosition).toBeDefined()
+    })
+
+    it('getLunarEclipticPosition should be', () => {
+      const { λ, β, Λ } = getLunarEclipticPosition(datetime)
+
+      expect(λ).toBeCloseTo(133.3056352)
+      expect(β).toBeCloseTo(-3.27851454)
+      expect(Λ).toBeCloseTo(367875966.53360325)
     })
   })
 })
