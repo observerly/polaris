@@ -1,6 +1,7 @@
 import { describe, expect, it, suite } from 'vitest'
 
 import {
+  getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
   getNumberOfJulianCenturiesSinceEpoch2000
@@ -14,7 +15,18 @@ export const datetime = new Date('1992-04-12T00:00:00.000+00:00')
 
 const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
 
-suite('@observerly/polaris Utilities', () => {
+suite('@observerly/polaris Lunar', () => {
+  describe('Lunar Mean Anomaly', () => {
+    it('getLunarMeanAnomaly should be defined', () => {
+      expect(getLunarMeanAnomaly).toBeDefined()
+    })
+
+    it('getLunarMeanAnomaly should be', () => {
+      const M = getLunarMeanAnomaly(T)
+      expect(M).toBeCloseTo(5.150833)
+    })
+  })
+
   describe('Lunar Mean Elongation', () => {
     it('getLunarMeanElongation should be defined', () => {
       expect(getLunarMeanElongation).toBeDefined()
