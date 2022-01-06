@@ -1,6 +1,10 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { getEarthEccentricity, getNumberOfJulianCenturiesSinceEpoch2000 } from '../'
+import {
+  getEarthEccentricity,
+  getEarthObliquity,
+  getNumberOfJulianCenturiesSinceEpoch2000
+} from '../'
 
 // For testing we need to specify a date because most calculations are
 // differential w.r.t a time component. We set it to the date provided
@@ -19,6 +23,17 @@ suite('@observerly/polaris Terra', () => {
     it('getEarthEccentricity should be', () => {
       const E = getEarthEccentricity(T)
       expect(E).toBeCloseTo(1.000194)
+    })
+  })
+
+  describe('Earth Obliquity', () => {
+    it('getEarthObliquity should be defined', () => {
+      expect(getEarthObliquity).toBeDefined()
+    })
+
+    it('getEarthObliquity should be', () => {
+      const O = getEarthObliquity()
+      expect(O).toBe(23.4397)
     })
   })
 })
