@@ -13,8 +13,6 @@ import {
 
 import { getSolarMeanAnomaly } from '../solar'
 
-import { getEarthEccentricity } from '../terra'
-
 import { convertDegreeToRadian, convertRadianToDegree, getNormalisedDegree } from '../utilities'
 
 /**
