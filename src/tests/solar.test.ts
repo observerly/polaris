@@ -1,6 +1,7 @@
 import { describe, expect, it, suite } from 'vitest'
 
 import {
+  getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
   getNumberOfJulianCenturiesSinceEpoch2000
@@ -38,6 +39,19 @@ suite('@observerly/polaris Solar', () => {
 
       const O = getSolarMeanObliquity(T)
       expect(O).toBeCloseTo(23.43651)
+    })
+  })
+
+  describe('Solar Geometric Mean Longitude', () => {
+    it('getSolarGeometricMeanLongitude should be defined', () => {
+      expect(getSolarGeometricMeanLongitude).toBeDefined()
+    })
+
+    it('getSolarGeometricMeanLongitude should be defined', () => {
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+
+      const L = getSolarGeometricMeanLongitude(T)
+      expect(L).toBeCloseTo(51.966, 1)
     })
   })
 })
