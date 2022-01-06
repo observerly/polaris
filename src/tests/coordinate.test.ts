@@ -2,9 +2,26 @@ import { describe, expect, it, suite } from 'vitest'
 
 import { betelgeuse, datetime, observer } from '.'
 
-import { convertEquatorialToHorizontal, convertHorizontalToEquatorial } from '../'
+import {
+  convertEclipticToEquatorial,
+  convertEquatorialToHorizontal,
+  convertHorizontalToEquatorial,
+  getLunarEclipticPosition
+} from '../'
 
 suite('@observerly/polaris Coodinate', () => {
+  describe('Equatorial to Horizontal conversion', () => {
+    it('convertEclipticToEquatorial should be defined', () => {
+      expect(convertEclipticToEquatorial).toBeDefined()
+    })
+
+    it('convertEclipticToEquatorial should return the correct Equatorial coordinate of the Moon', () => {
+      const { ra, dec } = convertEclipticToEquatorial(getLunarEclipticPosition(datetime))
+      expect(ra).toBeCloseTo(76.2226348)
+      expect(dec).toBeCloseTo(23.463127)
+    })
+  })
+
   describe('Equatorial to Horizontal conversion', () => {
     it('convertEquatorialToHorizontal should be defined', () => {
       expect(convertEquatorialToHorizontal).toBeDefined()

@@ -2,7 +2,11 @@
 export { getEclipticObliquityEpoch2000, getHourAngle } from './astrometry'
 
 // Coordinates
-export { convertEquatorialToHorizontal, convertHorizontalToEquatorial } from './coordinates'
+export {
+  convertEclipticToEquatorial,
+  convertEquatorialToHorizontal,
+  convertHorizontalToEquatorial
+} from './coordinates'
 
 // Epoch
 export {
