@@ -9,3 +9,5 @@ export { getSolarMeanObliquity } from './getSolarMeanObliquity'
 export { getSolarRadialDistance } from './getSolarRadialDistance'
 
 export { getSolarTrueAnomaly } from './getSolarTrueAnomaly'
+
+export { getSolarTrueGeometricLongitude } from './getSolarTrueGeometricLongitude'

@@ -39,7 +39,8 @@ export {
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
   getSolarRadialDistance,
-  getSolarTrueAnomaly
+  getSolarTrueAnomaly,
+  getSolarTrueGeometricLongitude
 } from './solar'
 
 // Terra
