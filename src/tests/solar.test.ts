@@ -6,7 +6,10 @@ import {
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
-  getNumberOfJulianCenturiesSinceEpoch2000
+  getSolarRadialDistance,
+  getSolarTrueAnomaly,
+  getNumberOfJulianCenturiesSinceEpoch2000,
+  getEarthEccentricity
 } from '..'
 
 import { datetime } from '.'
@@ -76,6 +79,34 @@ suite('@observerly/polaris Solar', () => {
       const C = getSolarEquationOfCenter(T, M)
 
       expect(C).toBeCloseTo(-1.897323847)
+    })
+  })
+
+  describe('Solar Radial Distance', () => {
+    it('getSolarRadialDistance should be defined', () => {
+      expect(getSolarRadialDistance).toBeDefined()
+    })
+
+    it('getSolarRadialDistance should be', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.165 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
+
+      const M = convertDegreeToRadian(getSolarMeanAnomaly(T))
+
+      const C = getSolarEquationOfCenter(T, M)
+
+      const e = getEarthEccentricity(T)
+
+      const ν = getSolarTrueAnomaly(M, C)
+
+      const R = getSolarRadialDistance(e, ν)
+
+      expect(R).toBeCloseTo(0.983311)
     })
   })
 })
