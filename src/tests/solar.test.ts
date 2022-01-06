@@ -74,7 +74,7 @@ suite('@observerly/polaris Solar', () => {
 
       const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
 
-      const M = convertDegreeToRadian(getSolarMeanAnomaly(T))
+      const M = getSolarMeanAnomaly(T)
 
       const C = getSolarEquationOfCenter(T, M)
 
@@ -96,7 +96,7 @@ suite('@observerly/polaris Solar', () => {
 
       const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
 
-      const M = convertDegreeToRadian(getSolarMeanAnomaly(T))
+      const M = getSolarMeanAnomaly(T)
 
       const C = getSolarEquationOfCenter(T, M)
 
@@ -106,7 +106,7 @@ suite('@observerly/polaris Solar', () => {
 
       const R = getSolarRadialDistance(e, ν)
 
-      expect(R).toBeCloseTo(0.983311)
+      expect(R).toBeCloseTo(0.9976619)
     })
   })
 })
