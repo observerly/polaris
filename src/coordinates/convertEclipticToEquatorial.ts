@@ -4,6 +4,15 @@ import { getEclipticObliquityEpoch2000 } from '../astrometry'
 
 import { convertRadianToDegree, convertDegreeToRadian, getNormalisedDegree } from '../utilities'
 
+/**
+ *
+ * convertEclipticToEquatorial()
+ *
+ * @see EQ13.3 & EQ13.4 p.93 of Meeus, Jean. 1991. Astronomical algorithms. Richmond, Va: Willmann-Bell.
+ *
+ * @param geocentricEclipticCoordinate of type GeocentricEclipticCoordinate { λ, β, Λ }
+ * @returns the convert equatorial coordinate { ra, dec }
+ */
 export const convertEclipticToEquatorial = (
   coordinate: GeocentricEclipticCoordinate
 ): EquatorialCoordinate => {
