@@ -1,3 +1,5 @@
+import { convertDegreeToRadian } from '../utilities'
+
 /**
  * getSolarEquationOfCenter()
  *
@@ -7,6 +9,8 @@
  * @returns the equation of center for the Sun
  */
 export const getSolarEquationOfCenter = (T: number, M: number): number => {
+  M = convertDegreeToRadian(M)
+
   return (
     (1.914602 - 0.004817 * T - 0.000014 * Math.pow(T, 2)) * Math.sin(M) +
     (0.019993 - 0.000101 * T) * Math.sin(M * 2) +
