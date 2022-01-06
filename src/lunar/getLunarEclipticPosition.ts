@@ -40,7 +40,9 @@ export const getLunarEclipticPosition = (datetime: Date): GeocentricEclipticCoor
 
   const F = convertDegreeToRadian(getLunarArgumentOfLatitude(T))
 
-  const E = convertDegreeToRadian(getEarthEccentricity(T))
+  const E = convertDegreeToRadian(
+    getNormalisedDegree(1 - 0.002516 * T - 0.0000074 * Math.pow(T, 2))
+  )
 
   const A1 = convertDegreeToRadian(getNormalisedDegree(119.75 + 131.849 * T))
 
