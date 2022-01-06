@@ -3,7 +3,7 @@ import { getNormalisedDegree } from '../'
 /**
  * getLunarMeanAnomaly()
  *
- * @params T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
+ * @param T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
  * @returns the Lunar anomaly.
  */
 export const getLunarMeanAnomaly = (T: number): number => {

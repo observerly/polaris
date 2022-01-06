@@ -6,7 +6,7 @@ import { getNormalisedDegree } from '../'
  *
  * @see EQ.47.2 p.338 of Meeus, Jean. 1991. Astronomical algorithms. Richmond, Va: Willmann-Bell.
  *
- * @params T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
+ * @param T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
  * @returns the mean Lunar elongation
  */
 export const getLunarMeanElongation = (T: number): number => {

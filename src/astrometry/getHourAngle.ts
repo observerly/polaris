@@ -4,7 +4,7 @@
  *
  * @param ra right ascension of type number of the observed object's equatorial coordinate in degrees
  * @param LST local sidereal time of type number is defined as the hour angle of the vernal equinox in degrees
- * @output the calculated Hour Angle in degrees
+ * @returns the calculated Hour Angle in degrees
  */
 export const getHourAngle = (ra: number, LST: number): number => {
   let ha = LST * 15 - ra

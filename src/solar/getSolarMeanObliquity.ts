@@ -3,7 +3,7 @@ import { getNormalisedDegree } from '../'
 /**
  * getSolarMeanObliquity()
  *
- * @params T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
+ * @param T (of type number) the Ephemeris Time or the number of centuries since J2000 epoch
  * @returns the mean obliquity of the solar orbit.
  */
 

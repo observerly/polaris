@@ -14,7 +14,7 @@ import { convertDegreeToRadian, convertRadianToDegree, getNormalisedDegree } fro
  * @param equatorialCoordinate of type EquatorialCoordinate { ra, dec }
  * @param observer of type GeographicPointCoordinate { longitude, latitude }
  * @param datetime of type Date
- * @output the equivalent horizontal coordinates for the given observers position
+ * @returns the equivalent horizontal coordinates for the given observers position
  */
 export const convertEquatorialToHorizontal = (
   equatorialCoordinate: EquatorialCoordinate,
