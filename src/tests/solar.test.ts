@@ -3,6 +3,7 @@ import { describe, expect, it, suite } from 'vitest'
 import {
   getSolarApparentLongitude,
   getSolarEquationOfCenter,
+  getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
@@ -190,6 +191,25 @@ suite('@observerly/polaris Solar', () => {
       const λ = getSolarApparentLongitude(l, Ω)
 
       expect(λ).toBeCloseTo(199.90895)
+    })
+  })
+
+  describe('Solar Equatorial Position', () => {
+    it('getSolarEquatorialPosition', () => {
+      expect(getSolarEquatorialPosition).toBeDefined()
+    })
+
+    it('getSolarEquatorialPosition should be', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.165 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      const { ra, dec } = getSolarEquatorialPosition(d)
+
+      expect(ra).toBeCloseTo(198.38083)
+      expect(dec).toBeCloseTo(-7.78507)
     })
   })
 })
