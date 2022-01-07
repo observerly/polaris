@@ -5,6 +5,7 @@ import {
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
+  getSolarNutation,
   getSolarRadialDistance,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude,
@@ -44,6 +45,26 @@ suite('@observerly/polaris Solar', () => {
 
       const O = getSolarMeanObliquity(T)
       expect(O).toBeCloseTo(23.43651)
+    })
+  })
+
+  describe('Solar Nutation', () => {
+    it('getSolarNutation should be defined', () => {
+      expect(getSolarNutation).toBeDefined()
+    })
+
+    it('getSolarNutation should be', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.342 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
+
+      const Ω = getSolarNutation(T)
+
+      expect(Ω).toBeCloseTo(264.652582)
     })
   })
 
