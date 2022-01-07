@@ -1,6 +1,7 @@
 import { describe, expect, it, suite } from 'vitest'
 
 import {
+  getSolarApparentLongitude,
   getSolarEquationOfCenter,
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
@@ -154,6 +155,41 @@ suite('@observerly/polaris Solar', () => {
       const R = getSolarRadialDistance(e, ν)
 
       expect(R).toBeCloseTo(0.9976619)
+    })
+  })
+
+  describe('Solar Apparent Longitude', () => {
+    it('getSolarApparentLongitude', () => {
+      expect(getSolarApparentLongitude).toBeDefined()
+    })
+
+    it('getSolarApparentLongitude should be', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.165 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      // First we need to calculate the Ephemeris Time:
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
+
+      // Correction for nutation (a rocking, swaying, or nodding motion in the
+      // axis of rotation of a largely axially symmetric object) and aberration
+      // (an apparent motion of celestial objects about their true positions,
+      // dependent on the velocity of the observer).
+      const Ω = getSolarNutation(T)
+
+      const M = getSolarMeanAnomaly(T)
+
+      const C = getSolarEquationOfCenter(T, M)
+
+      const L = getSolarGeometricMeanLongitude(T)
+
+      const l = getSolarTrueGeometricLongitude(L, C)
+
+      const λ = getSolarApparentLongitude(l, Ω)
+
+      expect(λ).toBeCloseTo(199.90895)
     })
   })
 })

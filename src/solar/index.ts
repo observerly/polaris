@@ -1,3 +1,5 @@
+export { getSolarApparentLongitude } from './getSolarApparentLongitude'
+
 export { getSolarEquationOfCenter } from './getSolarEquationOfCenter'
 
 export { getSolarGeometricMeanLongitude } from './getSolarGeometricMeanLongitude'
