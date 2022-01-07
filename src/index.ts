@@ -1,5 +1,5 @@
 // Astrometry
-export { getEclipticObliquityEpoch2000, getHourAngle } from './astrometry'
+export { getEclipticObliquity, getEclipticObliquityEpoch2000, getHourAngle } from './astrometry'
 
 // Coordinates
 export {
