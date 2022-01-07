@@ -16,9 +16,9 @@ suite('@observerly/polaris Coodinate', () => {
     })
 
     it('convertEclipticToEquatorial should return the correct Equatorial coordinate of the Moon', () => {
-      const { ra, dec } = convertEclipticToEquatorial(getLunarEclipticPosition(datetime))
-      expect(ra).toBeCloseTo(76.2226348)
-      expect(dec).toBeCloseTo(23.463127)
+      const { ra, dec } = convertEclipticToEquatorial(getLunarEclipticPosition(datetime), datetime)
+      expect(ra).toBeCloseTo(76.1983325)
+      expect(dec).toBeCloseTo(23.447219)
     })
   })
 

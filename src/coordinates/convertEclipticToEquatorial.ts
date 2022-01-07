@@ -1,6 +1,8 @@
 import type { EquatorialCoordinate, GeocentricEclipticCoordinate } from '../types'
 
-import { getEclipticObliquityEpoch2000 } from '../astrometry'
+import { getEclipticObliquity } from '../astrometry'
+
+import { getNumberOfJulianCenturiesSinceEpoch2000 } from '../epoch'
 
 import { convertRadianToDegree, convertDegreeToRadian, getNormalisedDegree } from '../utilities'
 
@@ -14,12 +16,15 @@ import { convertRadianToDegree, convertDegreeToRadian, getNormalisedDegree } fro
  * @returns the convert equatorial coordinate { ra, dec }
  */
 export const convertEclipticToEquatorial = (
-  coordinate: GeocentricEclipticCoordinate
+  coordinate: GeocentricEclipticCoordinate,
+  datetime: Date
 ): EquatorialCoordinate => {
   // Deconstruct the Geocentric Ecliptic Coordinates
   let { λ, β } = coordinate
 
-  const ɛ = convertDegreeToRadian(getEclipticObliquityEpoch2000())
+  const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+
+  const ɛ = convertDegreeToRadian(getEclipticObliquity(T))
 
   λ = convertDegreeToRadian(λ)
 
