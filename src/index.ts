@@ -33,6 +33,7 @@ export { convertDegreesToHMS } from './format'
 export {
   getLunarArgumentOfLatitude,
   getLunarEclipticPosition,
+  getLunarEquatorialPosition,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
