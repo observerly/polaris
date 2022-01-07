@@ -38,6 +38,7 @@ export {
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
+  getSolarNutation,
   getSolarRadialDistance,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude
