@@ -73,9 +73,9 @@ suite('@observerly/polaris Lunar', () => {
     it('getLunarEclipticPosition should be', () => {
       const { λ, β, Λ } = getLunarEclipticPosition(d)
 
-      expect(λ).toBeCloseTo(133.3056352)
-      expect(β).toBeCloseTo(-3.27851454)
-      expect(Λ).toBeCloseTo(367875966.53360325)
+      expect(λ).toBeCloseTo(133.1626581)
+      expect(β).toBeCloseTo(-3.22912696)
+      expect(Λ).toBeCloseTo(368409694.2252633)
     })
   })
 
