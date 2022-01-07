@@ -38,15 +38,13 @@ export const getLunarEclipticPosition = (datetime: Date): GeocentricEclipticCoor
 
   const F = convertDegreeToRadian(getLunarArgumentOfLatitude(T))
 
-  const E = convertDegreeToRadian(
-    getNormalisedDegree(1 - 0.002516 * T - 0.0000074 * Math.pow(T, 2))
-  )
-
   const A1 = convertDegreeToRadian(getNormalisedDegree(119.75 + 131.849 * T))
 
   const A2 = convertDegreeToRadian(getNormalisedDegree(53.09 + 479264.29 * T))
 
   const A3 = convertDegreeToRadian(getNormalisedDegree(313.45 + 481266.484 * T))
+
+  const E = getNormalisedDegree(1 - 0.002516 * T - 0.0000074 * Math.pow(T, 2))
 
   const E2 = Math.pow(E, 2)
 
@@ -72,14 +70,17 @@ export const getLunarEclipticPosition = (datetime: Date): GeocentricEclipticCoor
       case 0:
         Σl += row.Σl * sinA
         Σr += row.Σr * cosA
+        break
       case -1:
       case 1:
         Σl += row.Σl * sinA * E
         Σr += row.Σr * cosA * E
+        break
       case -2:
       case 2:
         Σl += row.Σl * sinA * E2
         Σr += row.Σr * cosA * E2
+        break
     }
   })
 
@@ -91,12 +92,15 @@ export const getLunarEclipticPosition = (datetime: Date): GeocentricEclipticCoor
     switch (row.S) {
       case 0:
         Σb += row.Σb * sinB
+        break
       case -1:
       case 1:
         Σb += row.Σb * sinB * E
+        break
       case -2:
       case 2:
         Σb += row.Σb * sinB * E2
+        break
     }
   })
 
