@@ -4,10 +4,12 @@ import { datetime, longitude, betelgeuse } from '.'
 
 import {
   getEclipticObliquity,
+  getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
   getHourAngle,
   getLocalSiderealTime,
-  getNumberOfJulianCenturiesSinceEpoch2000
+  getNumberOfJulianCenturiesSinceEpoch2000,
+  getSolarNutation
 } from '../'
 
 suite('@observerly/polaris Astrometry', () => {
@@ -40,6 +42,28 @@ suite('@observerly/polaris Astrometry', () => {
       const O = getEclipticObliquity(T)
 
       expect(O).toBeCloseTo(23.43999)
+    })
+
+    it('getEclipticObliquityEpoch2000 should be defined', () => {
+      expect(getEclipticObliquityEpoch2000).toBeDefined()
+    })
+
+    it('getEclipticObliquityEpoch2000 should be', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.342 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
+
+      const ε = getEclipticObliquity(T)
+
+      const Ω = getSolarNutation(T)
+
+      const O = getEclipticObliquityCorrected(ε, Ω)
+
+      expect(O).toBeCloseTo(23.4399918)
     })
 
     it('getEclipticObliquityEpoch2000 should be defined', () => {
