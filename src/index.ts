@@ -39,6 +39,7 @@ export {
 
 // Solar
 export {
+  getSolarApparentLongitude,
   getSolarEquationOfCenter,
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
