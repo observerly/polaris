@@ -3,6 +3,7 @@ import { describe, expect, it, suite } from 'vitest'
 import {
   getLunarArgumentOfLatitude,
   getLunarEclipticPosition,
+  getLunarEquatorialPosition,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
@@ -76,6 +77,19 @@ suite('@observerly/polaris Lunar', () => {
       expect(λ).toBeCloseTo(133.1626581)
       expect(β).toBeCloseTo(-3.22912696)
       expect(Λ).toBeCloseTo(368409694.2252633)
+    })
+  })
+
+  describe('Lunar Equatorial Position', () => {
+    it('getLunarEquatorialPosition should be defined', () => {
+      expect(getLunarEquatorialPosition).toBeDefined()
+    })
+
+    it('getLunarEquatorialPosition should be', () => {
+      const { ra, dec } = getLunarEquatorialPosition(d)
+
+      expect(ra).toBeCloseTo(314.683864)
+      expect(dec).toBeCloseTo(13.768368)
     })
   })
 
