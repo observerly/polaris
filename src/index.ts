@@ -6,6 +6,13 @@ export {
   getHourAngle
 } from './astrometry'
 
+// Constellations
+export * from './constellations'
+
+import * as _constellations from './constellations'
+
+export const constellations = Object.values(_constellations)
+
 // Coordinates
 export {
   convertEclipticToEquatorial,
