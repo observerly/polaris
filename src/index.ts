@@ -6,12 +6,14 @@ export {
   getHourAngle
 } from './astrometry'
 
+import type { Constellation } from './types'
+
 // Constellations
-export * from './constellations'
+import * as _constellations from './constellations/iau'
 
-import * as _constellations from './constellations'
+export const constellations: Constellation[] = Object.values(_constellations)
 
-export const constellations = Object.values(_constellations)
+export { getConstellation } from './constellations'
 
 // Coordinates
 export {
@@ -67,7 +69,13 @@ export {
 export { getEarthEccentricity, getEarthObliquity } from './terra'
 
 // Types
-export type { EquatorialCoordinate, GeographicCoordinate, HorizontalCoordinate } from './types'
+export type {
+  Constellation,
+  ConstellationNancyRoman,
+  EquatorialCoordinate,
+  GeographicCoordinate,
+  HorizontalCoordinate
+} from './types'
 
 // Utilities
 export {
