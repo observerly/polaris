@@ -6,8 +6,6 @@ import { NANCY_ROMAN_TABLE_I } from '../constellations/table/roman/I'
 
 import { precessEquatorialCoordinate } from '../coordinates'
 
-import { convertDegreeToRadian } from '../utilities'
-
 /**
  *
  * @param equatorialCoordinate
