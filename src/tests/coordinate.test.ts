@@ -66,7 +66,7 @@ suite('@observerly/polaris Coodinate', () => {
     })
 
     const { ra, dec } = precessEquatorialCoordinate(betelgeuse, datetime.getFullYear(), 1875)
-    expect(ra).toBeCloseTo(86.901619)
-    expect(dec).toBeCloseTo(1.519194)
+    expect(ra).toBeCloseTo(86.81801)
+    expect(dec).toBeCloseTo(7.3759358)
   })
 })
