@@ -4,6 +4,8 @@ export { getLunarEclipticPosition } from './getLunarEclipticPosition'
 
 export { getLunarEquatorialPosition } from './getLunarEquatorialPosition'
 
+export { getLunarIlluminatedFraction } from './getLunarIlluminatedFraction'
+
 export { getLunarMeanAnomaly } from './getLunarMeanAnomaly'
 
 export { getLunarMeanElongation } from './getLunarMeanElongation'

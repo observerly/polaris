@@ -1,13 +1,17 @@
 import { describe, expect, it, suite } from 'vitest'
 
 import {
+  convertDegreeToRadian,
   getLunarArgumentOfLatitude,
   getLunarEclipticPosition,
   getLunarEquatorialPosition,
+  getLunarIlluminatedFraction,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
   getLunarPhase,
+  getLunarPhaseAngle,
+  getSolarMeanAnomaly,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from '..'
 
@@ -90,6 +94,31 @@ suite('@observerly/polaris Lunar', () => {
 
       expect(ra).toBeCloseTo(314.683864)
       expect(dec).toBeCloseTo(13.768368)
+    })
+  })
+
+  describe('Lunar Illuminated Fraction', () => {
+    it('getLunarIlluminatedFraction should be defined', () => {
+      expect(getLunarIlluminatedFraction).toBeDefined()
+    })
+
+    it('getLunarIlluminatedFraction should be', () => {
+      // First we need to calculate the Ephemeris Time:
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(d)
+
+      const D = convertDegreeToRadian(getLunarMeanElongation(T))
+
+      const S = convertDegreeToRadian(getSolarMeanAnomaly(T))
+
+      const M = convertDegreeToRadian(getLunarMeanAnomaly(T))
+
+      // Calculate the Lunar Phase Angle:
+      const θ = getLunarPhaseAngle(D, S, M)
+
+      // Calculate the Lunar Illuminated Fraction from the phase angle:
+      const k = getLunarIlluminatedFraction(θ)
+
+      expect(k).toBeCloseTo(0.68896)
     })
   })
 
