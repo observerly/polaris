@@ -4,7 +4,8 @@ import {
   convertDegreeToHour,
   convertDegreeToRadian,
   convertRadianToDegree,
-  getNormalisedDegree
+  getNormalisedDegree,
+  normaliseStellarMagnitude
 } from '../'
 
 suite('@observerly/polaris Utilities', () => {
@@ -94,6 +95,27 @@ suite('@observerly/polaris Utilities', () => {
     it('convertDegreeToHour should be 3 hours at a 1/8 rotation', () => {
       const hr = convertDegreeToHour(45)
       expect(hr).toBe(3)
+    })
+  })
+
+  describe('Normalise Stellar Magntidue', () => {
+    it('normaliseStellarMagnitude should be defined', () => {
+      expect(normaliseStellarMagnitude).toBeDefined()
+    })
+
+    it('normaliseStellarMagnitude should return the correct value', () => {
+      const magnitude = normaliseStellarMagnitude(5, 6)
+      expect(magnitude).toBeCloseTo(1.333333)
+    })
+
+    it('normaliseStellarMagnitude should return the correct value', () => {
+      const magnitude = normaliseStellarMagnitude(0, 6)
+      expect(magnitude).toBeCloseTo(4.666666)
+    })
+
+    it('normaliseStellarMagnitude should return the correct value', () => {
+      const magnitude = normaliseStellarMagnitude(-1, 6)
+      expect(magnitude).toBeCloseTo(5.333333)
     })
   })
 })

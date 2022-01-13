@@ -82,5 +82,6 @@ export {
   convertDegreeToHour,
   convertDegreeToRadian,
   convertRadianToDegree,
-  getNormalisedDegree
+  getNormalisedDegree,
+  normaliseStellarMagnitude
 } from './utilities'
