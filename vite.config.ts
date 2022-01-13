@@ -24,6 +24,11 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: '@observerly/polaris',
       fileName: format => `polaris.${format}.js`
+    },
+    rollupOptions: {
+      output: {
+        sourcemap: true
+      }
     }
   }
 })
