@@ -26,7 +26,7 @@ export const precessEquatorialCoordinate = (
   let { ra, dec } = equatorialCoordinate
 
   ra = convertDegreeToRadian(ra)
-  dec = convertDegreeToRadian(ra)
+  dec = convertDegreeToRadian(dec)
 
   const x1 = [Math.cos(dec) * Math.cos(ra), Math.cos(dec) * Math.sin(ra), Math.sin(dec)]
 
