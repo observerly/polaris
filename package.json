@@ -14,7 +14,7 @@
   ],
   "main": "./dist/polaris.umd.js",
   "module": "./dist/polaris.es.js",
-  "types": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/polaris.es.js",
