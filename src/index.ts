@@ -44,6 +44,7 @@ export {
   getLunarArgumentOfLatitude,
   getLunarEclipticPosition,
   getLunarEquatorialPosition,
+  getLunarIlluminatedFraction,
   getLunarMeanAnomaly,
   getLunarMeanElongation,
   getLunarMeanLongitude,
