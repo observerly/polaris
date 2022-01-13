@@ -17,7 +17,8 @@ export const constellations = Object.values(_constellations)
 export {
   convertEclipticToEquatorial,
   convertEquatorialToHorizontal,
-  convertHorizontalToEquatorial
+  convertHorizontalToEquatorial,
+  precessEquatorialCoordinate
 } from './coordinates'
 
 // Epoch

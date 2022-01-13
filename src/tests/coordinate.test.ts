@@ -6,7 +6,8 @@ import {
   convertEclipticToEquatorial,
   convertEquatorialToHorizontal,
   convertHorizontalToEquatorial,
-  getLunarEclipticPosition
+  getLunarEclipticPosition,
+  precessEquatorialCoordinate
 } from '../'
 
 suite('@observerly/polaris Coodinate', () => {
@@ -57,5 +58,15 @@ suite('@observerly/polaris Coodinate', () => {
       expect(ra).toBeCloseTo(betelgeuse.ra, 1)
       expect(dec).toBeCloseTo(betelgeuse.dec, 1)
     })
+  })
+
+  describe('Precess Equatorial Coordinate', () => {
+    it('precessEquatorialCoordinate should be defined', () => {
+      expect(precessEquatorialCoordinate).toBeDefined()
+    })
+
+    const { ra, dec } = precessEquatorialCoordinate(betelgeuse, datetime.getFullYear(), 1875)
+    expect(ra).toBeCloseTo(86.901619)
+    expect(dec).toBeCloseTo(1.519194)
   })
 })
