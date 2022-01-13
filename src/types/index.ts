@@ -1,4 +1,4 @@
-export type { Aster, Constellation } from './constellations'
+export type { Aster, Constellation, ConstellationNancyRoman } from './constellations'
 
 export type {
   EquatorialCoordinate,
