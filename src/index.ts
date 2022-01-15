@@ -55,6 +55,7 @@ export {
 // Solar
 export {
   getSolarApparentLongitude,
+  getSolarEcliptic,
   getSolarEquationOfCenter,
   getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,
