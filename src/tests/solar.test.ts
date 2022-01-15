@@ -2,6 +2,7 @@ import { describe, expect, it, suite } from 'vitest'
 
 import {
   getSolarApparentLongitude,
+  getSolarEcliptic,
   getSolarEquationOfCenter,
   getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,
@@ -210,6 +211,17 @@ suite('@observerly/polaris Solar', () => {
 
       expect(ra).toBeCloseTo(198.38083)
       expect(dec).toBeCloseTo(-7.78507)
+    })
+  })
+
+  describe('Solar Ecliptic Plane', () => {
+    it('getSolarEcliptic should be defined', function () {
+      expect(getSolarEcliptic).toBeDefined()
+    })
+
+    it('getSolarEcliptic should have 365 days of length', function () {
+      const ecliptic = getSolarEcliptic(datetime)
+      expect(ecliptic.length).toBe(365)
     })
   })
 })
