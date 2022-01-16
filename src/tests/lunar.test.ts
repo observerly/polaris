@@ -90,10 +90,19 @@ suite('@observerly/polaris Lunar', () => {
     })
 
     it('getLunarEquatorialPosition should be', () => {
+      const { ra, dec } = getLunarEquatorialPosition(datetime)
+
+      expect(ra).toBeCloseTo(76.239624)
+      expect(dec).toBeCloseTo(23.598793)
+    })
+
+    it('getLunarEquatorialPosition should be', () => {
+      const d = new Date('2022-01-16T02:56:00.000+00:00')
+
       const { ra, dec } = getLunarEquatorialPosition(d)
 
-      expect(ra).toBeCloseTo(314.683864)
-      expect(dec).toBeCloseTo(13.768368)
+      expect(ra).toBeCloseTo(95.2930136)
+      expect(dec).toBeCloseTo(26.493669)
     })
   })
 
