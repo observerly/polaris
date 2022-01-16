@@ -22,7 +22,7 @@ export const getSolarEcliptic = (datetime: Date): EquatorialCoordinate[] => {
   const end: number = getCurrentYearEnd(datetime).getTime()
 
   for (let currentDateTime = start; currentDateTime <= end; currentDateTime += precision) {
-    ecliptic.push(getSolarEquatorialPosition(new Date(start)))
+    ecliptic.push(getSolarEquatorialPosition(new Date(currentDateTime)))
   }
 
   return ecliptic
