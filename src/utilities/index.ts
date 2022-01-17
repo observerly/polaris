@@ -1,3 +1,5 @@
+export { convertDegreeToHMS } from './convertDegreeToHMS'
+
 export { convertDegreeToHour } from './convertDegreeToHour'
 
 export { convertDegreeToRadian } from './convertDegreeToRadian'

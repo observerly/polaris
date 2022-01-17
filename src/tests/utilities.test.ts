@@ -1,12 +1,15 @@
 import { describe, expect, it, suite } from 'vitest'
 
+import { betelgeuse } from '.'
+
 import {
+  convertDegreeToHMS,
   convertDegreeToHour,
   convertDegreeToRadian,
   convertRadianToDegree,
   getNormalisedDegree,
   normaliseStellarMagnitude
-} from '../'
+} from '..'
 
 suite('@observerly/polaris Utilities', () => {
   describe('Degree to Radian Convserion', () => {
@@ -95,6 +98,19 @@ suite('@observerly/polaris Utilities', () => {
     it('convertDegreeToHour should be 3 hours at a 1/8 rotation', () => {
       const hr = convertDegreeToHour(45)
       expect(hr).toBe(3)
+    })
+  })
+
+  describe('Convert Degree to Hours, Minutes and  Seconds', () => {
+    it('convertDegreeToHMS to be defined', () => {
+      expect(convertDegreeToHMS).toBeDefined()
+    })
+
+    it('convertDegreeToHMS to be defined', () => {
+      const { hrs, min, sec } = convertDegreeToHMS(betelgeuse.ra)
+      expect(hrs).toBe(5)
+      expect(min).toBe(55)
+      expect(sec).toBe(10.31)
     })
   })
 

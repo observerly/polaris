@@ -81,6 +81,7 @@ export type {
 
 // Utilities
 export {
+  convertDegreeToHMS,
   convertDegreeToHour,
   convertDegreeToRadian,
   convertRadianToDegree,
