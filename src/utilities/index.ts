@@ -12,4 +12,6 @@ export { getNormalisedDegree } from './getNormalisedDegree'
 
 export { normaliseStellarMagnitude } from './normaliseStellarMagnitude'
 
+export { parseDegreeToDMSHumanised } from './parseDegreeToDMSHumanised'
+
 export { parseDegreeToHMSHumanised } from './parseDegreeToHMSHumanised'

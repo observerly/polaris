@@ -10,6 +10,7 @@ import {
   convertRadianToDegree,
   getNormalisedDegree,
   normaliseStellarMagnitude,
+  parseDegreeToDMSHumanised,
   parseDegreeToHMSHumanised
 } from '..'
 
@@ -137,6 +138,17 @@ suite('@observerly/polaris Utilities', () => {
       expect(deg).toBe(7)
       expect(min).toBe(24)
       expect(sec).toBe(25.43)
+    })
+  })
+
+  describe('Parse Degree to Degree, Minutes and Seconds Humanised', () => {
+    it('parseDegreeToDMSHumanised to be defined', () => {
+      expect(parseDegreeToDMSHumanised).toBeDefined()
+    })
+
+    it('parseDegreeToHMSHumanised to return the correct value for Betelgeuse', () => {
+      const humanised = parseDegreeToDMSHumanised(betelgeuse.dec)
+      expect(humanised).toBe('+07° 24\' 25.43"')
     })
   })
 
