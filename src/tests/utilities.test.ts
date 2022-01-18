@@ -9,7 +9,8 @@ import {
   convertDegreeToRadian,
   convertRadianToDegree,
   getNormalisedDegree,
-  normaliseStellarMagnitude
+  normaliseStellarMagnitude,
+  parseDegreeToHMSHumanised
 } from '..'
 
 suite('@observerly/polaris Utilities', () => {
@@ -102,16 +103,27 @@ suite('@observerly/polaris Utilities', () => {
     })
   })
 
-  describe('Convert Degree to Hours, Minutes and  Seconds', () => {
+  describe('Convert Degree to Hours, Minutes and Seconds', () => {
     it('convertDegreeToHMS to be defined', () => {
       expect(convertDegreeToHMS).toBeDefined()
     })
 
-    it('convertDegreeToHMS to be defined', () => {
+    it('convertDegreeToHMS to return the correct value for Betelgeuse', () => {
       const { hrs, min, sec } = convertDegreeToHMS(betelgeuse.ra)
       expect(hrs).toBe(5)
       expect(min).toBe(55)
       expect(sec).toBe(10.31)
+    })
+  })
+
+  describe('Parse Degree to Hours, Minutes and Seconds Humanised', () => {
+    it('parseDegreeToHMSHumanised to be defined', () => {
+      expect(parseDegreeToHMSHumanised).toBeDefined()
+    })
+
+    it('parseDegreeToHMSHumanised to return the correct value for Betelgeuse', () => {
+      const humanised = parseDegreeToHMSHumanised(betelgeuse.ra)
+      expect(humanised).toBe('05ʰ 55ᵐ 10.31ˢ')
     })
   })
 

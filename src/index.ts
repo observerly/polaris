@@ -87,5 +87,6 @@ export {
   convertDegreeToRadian,
   convertRadianToDegree,
   getNormalisedDegree,
-  normaliseStellarMagnitude
+  normaliseStellarMagnitude,
+  parseDegreeToHMSHumanised
 } from './utilities'
