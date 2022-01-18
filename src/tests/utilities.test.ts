@@ -3,6 +3,7 @@ import { describe, expect, it, suite } from 'vitest'
 import { betelgeuse } from '.'
 
 import {
+  convertDegreeToDMS,
   convertDegreeToHMS,
   convertDegreeToHour,
   convertDegreeToRadian,
@@ -111,6 +112,19 @@ suite('@observerly/polaris Utilities', () => {
       expect(hrs).toBe(5)
       expect(min).toBe(55)
       expect(sec).toBe(10.31)
+    })
+  })
+
+  describe('Convert Degree to Degree, Minutes and  Seconds', () => {
+    it('convertDegreeToDMS to be defined', () => {
+      expect(convertDegreeToDMS).toBeDefined()
+    })
+
+    it('convertDegreeToDMS to be defined', () => {
+      const { deg, min, sec } = convertDegreeToDMS(betelgeuse.dec)
+      expect(deg).toBe(7)
+      expect(min).toBe(24)
+      expect(sec).toBe(25.43)
     })
   })
 
