@@ -1,3 +1,7 @@
+export { AngleHourMinuteSecond } from './angle'
+
+export { Moon } from './bodies'
+
 export type { Aster, Constellation, ConstellationNancyRoman } from './constellations'
 
 export type {
@@ -6,5 +10,3 @@ export type {
   GeographicCoordinate,
   HorizontalCoordinate
 } from './coordinates'
-
-export { AngleHourMinuteSecond } from './angle'

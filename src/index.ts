@@ -49,7 +49,8 @@ export {
   getLunarMeanElongation,
   getLunarMeanLongitude,
   getLunarPhase,
-  getLunarPhaseAngle
+  getLunarPhaseAngle,
+  getMoon
 } from './lunar'
 
 // Solar

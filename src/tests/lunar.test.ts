@@ -11,6 +11,7 @@ import {
   getLunarMeanLongitude,
   getLunarPhase,
   getLunarPhaseAngle,
+  getMoon,
   getSolarMeanAnomaly,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from '..'
@@ -139,6 +140,24 @@ suite('@observerly/polaris Lunar', () => {
     it('getLunarPhase should be', () => {
       const phase = getLunarPhase(datetime)
       expect(phase).toBeCloseTo(0.06656)
+    })
+  })
+
+  describe('The Moon', () => {
+    it('getMoon should be defined', () => {
+      expect(getMoon).toBeDefined()
+    })
+
+    it('getMoon should be defined', () => {
+      const moon = getMoon(datetime)
+      expect(moon.ra).toBeCloseTo(76.239624)
+      expect(moon.dec).toBeCloseTo(23.598793)
+      expect(moon.illumination).toBeCloseTo(0.04226)
+      expect(moon.inclination).toBe(5.145)
+      expect(moon.obliquity).toBe(6.687)
+      expect(moon.phase).toBeCloseTo(0.06656)
+      expect(moon.siderealMonth).toBe(27.321661)
+      expect(moon.synodicMonth).toBe(29.530588)
     })
   })
 })
