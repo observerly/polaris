@@ -2,8 +2,7 @@ import { describe, expect, it, suite } from 'vitest'
 
 import { alpheratz, arcturus, betelgeuse, datetime, regulus, vega } from '.'
 
-import { constellations } from '../'
-import { getConstellation } from '../constellations'
+import { constellations, getConstellation } from '../src'
 
 suite('@observerly/polaris Constellations', () => {
   describe('IAU Constellations', () => {

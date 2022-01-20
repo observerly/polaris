@@ -12,7 +12,7 @@ import {
   getModifiedJulianDate,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000
-} from '../'
+} from '../src'
 
 suite('@observerly/polaris Epoch', () => {
   describe('Current Year', () => {

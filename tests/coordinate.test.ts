@@ -8,7 +8,7 @@ import {
   convertHorizontalToEquatorial,
   getLunarEclipticPosition,
   precessEquatorialCoordinate
-} from '../'
+} from '../src'
 
 suite('@observerly/polaris Coodinate', () => {
   describe('Equatorial to Horizontal conversion', () => {

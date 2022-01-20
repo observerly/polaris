@@ -12,7 +12,7 @@ import {
   normaliseStellarMagnitude,
   parseDegreeToDMSHumanised,
   parseDegreeToHMSHumanised
-} from '..'
+} from '../src'
 
 suite('@observerly/polaris Utilities', () => {
   describe('Degree to Radian Convserion', () => {

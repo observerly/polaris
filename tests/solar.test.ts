@@ -14,7 +14,7 @@ import {
   getSolarTrueGeometricLongitude,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getEarthEccentricity
-} from '..'
+} from '../src'
 
 import { datetime } from '.'
 

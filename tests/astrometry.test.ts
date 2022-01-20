@@ -10,7 +10,7 @@ import {
   getLocalSiderealTime,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getSolarNutation
-} from '../'
+} from '../src'
 
 suite('@observerly/polaris Astrometry', () => {
   describe('Hour Angle', () => {

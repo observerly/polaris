@@ -14,7 +14,7 @@ import {
   getMoon,
   getSolarMeanAnomaly,
   getNumberOfJulianCenturiesSinceEpoch2000
-} from '..'
+} from '../src'
 
 import { datetime } from '.'
 

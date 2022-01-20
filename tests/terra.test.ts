@@ -4,7 +4,7 @@ import {
   getEarthEccentricity,
   getEarthObliquity,
   getNumberOfJulianCenturiesSinceEpoch2000
-} from '../'
+} from '../src'
 
 // For testing we need to specify a date because most calculations are
 // differential w.r.t a time component. We set it to the date provided

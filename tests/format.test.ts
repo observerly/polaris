@@ -2,7 +2,7 @@ import { describe, expect, it, suite } from 'vitest'
 
 import { betelgeuse } from '.'
 
-import { convertDegreesToHMS } from '../'
+import { convertDegreesToHMS } from '../src'
 
 suite('@observerly/polaris Format', () => {
   describe('Degrees To HMS', () => {
