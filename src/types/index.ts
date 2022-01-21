@@ -1,6 +1,6 @@
 export { AngleHourMinuteSecond } from './angle'
 
-export { Moon } from './bodies'
+export { Moon, Sun } from './bodies'
 
 export type { Aster, Constellation, ConstellationNancyRoman } from './constellations'
 

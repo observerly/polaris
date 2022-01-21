@@ -78,7 +78,9 @@ export type {
   ConstellationNancyRoman,
   EquatorialCoordinate,
   GeographicCoordinate,
-  HorizontalCoordinate
+  HorizontalCoordinate,
+  Moon,
+  Sun
 } from './types'
 
 // Utilities
