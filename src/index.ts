@@ -65,7 +65,8 @@ export {
   getSolarNutation,
   getSolarRadialDistance,
   getSolarTrueAnomaly,
-  getSolarTrueGeometricLongitude
+  getSolarTrueGeometricLongitude,
+  getSun
 } from './solar'
 
 // Terra

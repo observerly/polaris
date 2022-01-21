@@ -12,6 +12,7 @@ import {
   getSolarRadialDistance,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude,
+  getSun,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getEarthEccentricity
 } from '../src'
@@ -222,6 +223,25 @@ suite('@observerly/polaris Solar', () => {
     it('getSolarEcliptic should have 365 days of length', function () {
       const ecliptic = getSolarEcliptic(datetime)
       expect(ecliptic.length).toBe(365)
+    })
+  })
+
+  describe('The Sun', () => {
+    it('getSun should be defined', () => {
+      expect(getSun).toBeDefined()
+    })
+
+    it('getSun should return the correct equatorial coordinate for the given date', () => {
+      // For testing we need to specify a date because most calculations are
+      // differential w.r.t a time component. We set it to the date provided
+      // on p.165 of Meeus, Jean. 1991. Astronomical algorithms.Richmond,
+      // Va: Willmann - Bell.:
+      const d = new Date('1992-10-13T00:00:00.000+00:00')
+
+      const { ra, dec } = getSun(d)
+
+      expect(ra).toBeCloseTo(198.38083)
+      expect(dec).toBeCloseTo(-7.78507)
     })
   })
 })
