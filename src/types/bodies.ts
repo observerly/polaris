@@ -51,3 +51,5 @@ export interface Moon extends EquatorialCoordinate, Partial<HorizontalCoordinate
    */
   synodicMonth: number
 }
+
+export interface Sun extends EquatorialCoordinate, Partial<HorizontalCoordinate> {}

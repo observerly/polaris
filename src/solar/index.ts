@@ -19,3 +19,5 @@ export { getSolarRadialDistance } from './getSolarRadialDistance'
 export { getSolarTrueAnomaly } from './getSolarTrueAnomaly'
 
 export { getSolarTrueGeometricLongitude } from './getSolarTrueGeometricLongitude'
+
+export { getSun } from './getSun'
