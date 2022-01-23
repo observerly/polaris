@@ -53,7 +53,7 @@ export {
   getMoon
 } from './lunar'
 
-export { convertHorizontalToStereo } from './projection'
+export { convertHorizontalToStereo, convertStereoToHorizontal } from './projection'
 
 // Solar
 export {
