@@ -53,6 +53,8 @@ export {
   getMoon
 } from './lunar'
 
+export { convertHorizontalToStereo } from './projection'
+
 // Solar
 export {
   getSolarApparentLongitude,

@@ -1,3 +1,20 @@
+export type CartesianCoordinate = {
+  /**
+   *
+   * the x-coordinate (or x-component), as it is the signed
+   * distance from the origin in the direction along the x-axis.
+   *
+   */
+  x: number
+  /**
+   *
+   * the y-coordinate (or y-component), as it is the signed
+   * distance from the origin in the direction along the y-axis.
+   *
+   */
+  y: number
+}
+
 export type EquatorialCoordinate = {
   /**
    *
