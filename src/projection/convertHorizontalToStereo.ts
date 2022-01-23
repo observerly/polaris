@@ -6,9 +6,9 @@ import { convertDegreeToRadian } from '../utilities'
  *
  * convertHorizontalToStereo()
  *
- * @param horizontalCoordinate
- * @param width
- * @param height
+ * @param horizontalCoordinate representing the { alt, az } position of a particular observed body.
+ * @param width (of type number) representing the width of the projected "canvas"
+ * @param height (of type number) representing the height of the projected "canvas"
  * @returns the Cartesian Coordinate { x, y } conversion to the stereographic projection
  */
 export const convertHorizontalToStereo = (
