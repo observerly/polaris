@@ -1,5 +1,173 @@
 import type { EquatorialCoordinate, HorizontalCoordinate } from '../types'
 
+export interface Body {
+  /**
+   *
+   * Some ID for the Start (Internal Usage only)
+   *
+   */
+  id: number
+  /**
+   *
+   * Right Ascension
+   *
+   */
+  ra: string
+  /**
+   *
+   * Declination
+   *
+   */
+  dec: string
+  /**
+   *
+   * IAU Constellation String
+   *
+   */
+  constellation: string
+  /**
+   *
+   * Apparent Magnitude
+   *
+   */
+  apparentMagnitude: string
+  /**
+   *
+   * Absolute Magnitude
+   *
+   */
+  absoluteMagnitude: string
+  /**
+   *
+   * V Band Magnitude (Magnitude relative to the Star Vega)
+   *
+   */
+  vBandMagnitude: string
+  /**
+   *
+   * Observed parallax of star
+   *
+   */
+  parallax: string
+  /**
+   *
+   * Observed distance of star
+   *
+   */
+  distance: string
+  /**
+   *
+   * Observed angular diameter of star
+   *
+   */
+  angularDiameter: number
+  /**
+   *
+   * Defined International Astronomy Union (IAU) Name
+   *
+   */
+  iau: string
+  /**
+   *
+   * Defined Common Name
+   *
+   */
+  common: string
+  /**
+   *
+   * Bayer Designation
+   *
+   */
+  bayer: string
+  /**
+   *
+   * Henry Draper Catalogue (HD) Catalogue Identification
+   *
+   */
+  hd: string
+  /**
+   *
+   * Harvard Revised Number
+   *
+   */
+  hr: string
+  /**
+   *
+   * Hipparcos Input (HIP) Catalogue Identification
+   *
+   */
+  hip: string
+  /**
+   *
+   * Bonner Durchmusterung (BD) Identification
+   *
+   */
+  dm: string
+  /**
+   *
+   * Flamsteed Designation Number
+   *
+   */
+  flamsteed: string
+  /**
+   *
+   * Messier Catalogue Number
+   *
+   */
+  messier: string
+  /**
+   *
+   * New General Catalogue Number
+   *
+   */
+  ngc: string
+  /**
+   *
+   * Index Catalogue Number
+   *
+   */
+  ic: string
+  /**
+   *
+   * A standard value representing the body type
+   *
+   * S => Star
+   *
+   * SG => Spiral Galaxy
+   * BG => Barred Galaxy
+   * EG => Elliptical Galaxy
+   * LG => Lenticular Galaxy
+   * SBG => Starburst Galaxy
+   * IG => Irregular Galaxy
+   *
+   * OCL => Open Cluster
+   * GCL => Globular Cluster
+   *
+   * EMN => Emission Nebula
+   * REN => Reflection Nebula
+   * DAN => Dark Nebula
+   * PLN => Planetary Nebula
+   * DFFN => Diffuse Nebula
+   * SNR => Supernova Remnant
+   *
+   * @default 'S'
+   *
+   */
+  type: string
+  /**
+   *
+   * SIMBAD Name
+   *
+   */
+  simbadName: string
+  /**
+   *
+   * SIMBAD Lookup Query
+   *
+   */
+  simbadQuery: string
+}
+
 export interface Moon extends EquatorialCoordinate, Partial<HorizontalCoordinate> {
   /**
    *
