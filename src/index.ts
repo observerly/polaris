@@ -76,6 +76,7 @@ export { getEarthEccentricity, getEarthObliquity } from './terra'
 
 // Types
 export type {
+  Body,
   CartesianCoordinate,
   Constellation,
   ConstellationNancyRoman,
