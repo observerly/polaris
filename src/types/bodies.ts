@@ -54,7 +54,7 @@ export interface Body {
    * Observed distance of star
    *
    */
-  distance: string
+  d: string
   /**
    *
    * Observed angular diameter of star
@@ -156,16 +156,10 @@ export interface Body {
   type: string
   /**
    *
-   * SIMBAD Name
-   *
-   */
-  simbadName: string
-  /**
-   *
    * SIMBAD Lookup Query
    *
    */
-  simbadQuery: string
+  query: string
 }
 
 export interface Moon extends EquatorialCoordinate, Partial<HorizontalCoordinate> {
