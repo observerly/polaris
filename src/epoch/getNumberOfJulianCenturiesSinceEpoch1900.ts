@@ -1,4 +1,4 @@
-import { getJulianDate } from '.'
+import { getNumberOfJulianCenturiesSinceEpoch } from '.'
 
 import { J1900 } from './constants'
 
@@ -9,7 +9,6 @@ import { J1900 } from './constants'
  * @returns the number of centuries since Julian Date 1900 as an integer for a particular datetime
  */
 export const getNumberOfJulianCenturiesSinceEpoch1900 = (datetime: Date): number => {
-  const JD = getJulianDate(datetime)
-  // Centuries Since January 1900
-  return (JD - J1900) / 36525
+  // Centuries Since January 1st 1900
+  return getNumberOfJulianCenturiesSinceEpoch(datetime, J1900)
 }

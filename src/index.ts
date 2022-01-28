@@ -32,6 +32,7 @@ export {
   getJulianYearInSeconds,
   getLocalSiderealTime,
   getModifiedJulianDate,
+  getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from './epoch'

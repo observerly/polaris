@@ -10,9 +10,12 @@ import {
   getJulianYearInSeconds,
   getLocalSiderealTime,
   getModifiedJulianDate,
+  getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000
 } from '../src'
+
+import { J1900, J2000 } from '../src/epoch/constants'
 
 suite('@observerly/polaris Epoch', () => {
   describe('Current Year', () => {
@@ -69,6 +72,20 @@ suite('@observerly/polaris Epoch', () => {
   })
 
   describe('Number Of Centuries Since Epoch', () => {
+    it('getNumberOfJulianCenturiesSinceEpoch should be defined', () => {
+      expect(getNumberOfJulianCenturiesSinceEpoch).toBeDefined()
+    })
+
+    it('getNumberOfJulianCenturiesSinceEpoch should be', () => {
+      const T = getNumberOfJulianCenturiesSinceEpoch(datetime, J1900)
+      expect(T).toBe(1.2136481861738535)
+    })
+
+    it('getNumberOfJulianCenturiesSinceEpoch should be', () => {
+      const T = getNumberOfJulianCenturiesSinceEpoch(datetime, J2000)
+      expect(T).toBe(0.21364818617385353)
+    })
+
     it('getNumberOfJulianCenturiesSinceEpoch1900 should be defined', () => {
       expect(getNumberOfJulianCenturiesSinceEpoch1900).toBeDefined()
     })
