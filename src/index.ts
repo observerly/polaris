@@ -3,6 +3,7 @@ export {
   getEclipticObliquity,
   getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
+  getEquatorialCoordinateProperMotionCorrected,
   getHourAngle
 } from './astrometry'
 

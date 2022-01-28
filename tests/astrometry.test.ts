@@ -6,11 +6,14 @@ import {
   getEclipticObliquity,
   getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
+  getEquatorialCoordinateProperMotionCorrected,
   getHourAngle,
   getLocalSiderealTime,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getSolarNutation
 } from '../src'
+
+import { J2000 } from '../src/epoch/constants'
 
 suite('@observerly/polaris Astrometry', () => {
   describe('Hour Angle', () => {
@@ -73,6 +76,25 @@ suite('@observerly/polaris Astrometry', () => {
     it('getEclipticObliquityEpoch2000 should be', () => {
       const O = getEclipticObliquityEpoch2000()
       expect(O).toBe(23.4392911)
+    })
+
+    it('getEquatorialCoordinateProperMotionCorrected should be defined', () => {
+      expect(getEquatorialCoordinateProperMotionCorrected).toBeDefined()
+    })
+
+    it('getEquatorialCoordinateProperMotionCorrected should apply the correct proper motion', () => {
+      const equatorialCoordinate = getEquatorialCoordinateProperMotionCorrected(
+        datetime,
+        betelgeuse,
+        { ra: 7.65e-6, dec: 3.13889e-6 },
+        J2000
+      )
+
+      expect(equatorialCoordinate.ra).not.toBe(betelgeuse.ra)
+      expect(equatorialCoordinate.ra).toBeCloseTo(88.79312)
+
+      expect(equatorialCoordinate.dec).not.toBe(betelgeuse.dec)
+      expect(equatorialCoordinate.dec).toBeCloseTo(7.407131)
     })
   })
 })
