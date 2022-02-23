@@ -1,6 +1,6 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { datetime, longitude, betelgeuse } from '.'
+import { betelgeuse, datetime, longitude, observer } from '.'
 
 import {
   getEclipticObliquity,
@@ -8,6 +8,7 @@ import {
   getEclipticObliquityEpoch2000,
   getEquatorialCoordinateProperMotionCorrected,
   getHourAngle,
+  getParallacticAngle,
   getLocalSiderealTime,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getSolarNutation
@@ -95,6 +96,15 @@ suite('@observerly/polaris Astrometry', () => {
 
       expect(equatorialCoordinate.dec).not.toBe(betelgeuse.dec)
       expect(equatorialCoordinate.dec).toBeCloseTo(7.407131)
+    })
+
+    it('getParallacticAngle should be defined', () => {
+      expect(getParallacticAngle).toBeDefined()
+    })
+
+    it('getParallacticAngle should be', () => {
+      const q = getParallacticAngle(betelgeuse, observer, datetime)
+      expect(q).toBeCloseTo(-66.051649)
     })
   })
 })
