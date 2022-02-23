@@ -4,7 +4,8 @@ export {
   getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
   getEquatorialCoordinateProperMotionCorrected,
-  getHourAngle
+  getHourAngle,
+  getParallacticAngle
 } from './astrometry'
 
 import type { Constellation } from './types'
