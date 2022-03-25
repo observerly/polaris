@@ -1,4 +1,4 @@
-import type { EquatorialCoordinate, GeographicCoordinate } from '..'
+import type { EquatorialCoordinate, GeographicCoordinate } from '../src'
 
 // For testing we need to specify a date because most calculations are
 // differential w.r.t a time component. We set it to the author's birthday:

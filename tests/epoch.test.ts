@@ -25,7 +25,12 @@ suite('@observerly/polaris Epoch', () => {
 
     it('getCurrentYearStart should be 1st January', () => {
       const yearStart = getCurrentYearStart(datetime)
-      expect(yearStart.toISOString()).toBe('2021-01-01T00:00:00.000Z')
+
+      expect(yearStart.getFullYear()).toBe(2021)
+      expect(yearStart.getMonth()).toBe(0)
+      expect(yearStart.getDate()).toBe(1)
+      expect(yearStart.getHours()).toBe(0)
+      expect(yearStart.getMinutes()).toBe(0)
     })
 
     it('getCurrentYearEnd should be defined', () => {
@@ -34,7 +39,12 @@ suite('@observerly/polaris Epoch', () => {
 
     it('getCurrentYearEnd should be 31st December', () => {
       const yearEnd = getCurrentYearEnd(datetime)
-      expect(yearEnd.toISOString()).toBe('2021-12-31T00:00:00.000Z')
+
+      expect(yearEnd.getFullYear()).toBe(2021)
+      expect(yearEnd.getMonth()).toBe(11)
+      expect(yearEnd.getDate()).toBe(31)
+      expect(yearEnd.getHours()).toBe(0)
+      expect(yearEnd.getMinutes()).toBe(0)
     })
   })
 
