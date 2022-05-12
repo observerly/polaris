@@ -42,3 +42,13 @@ export const vega: EquatorialCoordinate = {
   ra: 279.234735,
   dec: 38.783689
 }
+
+export const spica: EquatorialCoordinate = {
+  ra: 201.2983,
+  dec: -11.1614
+}
+
+export const denebola: EquatorialCoordinate = {
+  ra: 177.2649,
+  dec: 14.5720581
+}

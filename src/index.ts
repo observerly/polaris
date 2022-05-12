@@ -1,5 +1,6 @@
 // Astrometry
 export {
+  getAngularSeparation,
   getEclipticObliquity,
   getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
