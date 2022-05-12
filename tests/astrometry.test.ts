@@ -1,8 +1,9 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { betelgeuse, datetime, longitude, observer } from '.'
+import { arcturus, betelgeuse, datetime, denebola, longitude, observer, spica } from '.'
 
 import {
+  getAngularSeparation,
   getEclipticObliquity,
   getEclipticObliquityCorrected,
   getEclipticObliquityEpoch2000,
@@ -105,6 +106,27 @@ suite('@observerly/polaris Astrometry', () => {
     it('getParallacticAngle should be', () => {
       const q = getParallacticAngle(betelgeuse, observer, datetime)
       expect(q).toBeCloseTo(-66.051649)
+    })
+  })
+
+  describe('getAngularSeparation', () => {
+    it('should be defined', () => {
+      expect(getAngularSeparation).toBeDefined()
+    })
+
+    it('should be an angular separation of approximately 32 degrees between Arcturus and Spica', () => {
+      const separation = getAngularSeparation(arcturus, spica)
+      expect(separation).toBeCloseTo(32.793027)
+    })
+
+    it('should be an angular separation of approximately 35 degrees between Spica and Denebola', () => {
+      const separation = getAngularSeparation(spica, denebola)
+      expect(separation).toBeCloseTo(35.064334)
+    })
+
+    it('should be an angular separation of approximately 35 degrees between Denebola and Arcturus', () => {
+      const separation = getAngularSeparation(denebola, arcturus)
+      expect(separation).toBeCloseTo(35.309668)
     })
   })
 })

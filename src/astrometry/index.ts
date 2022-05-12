@@ -1,3 +1,5 @@
+export { getAngularSeparation } from './getAngularSeparation'
+
 export { getEclipticObliquity } from './getEclipticObliquity'
 
 export { getEclipticObliquityCorrected } from './getEclipticObliquityCorrected'
