@@ -39,9 +39,6 @@ export {
   getNumberOfJulianCenturiesSinceEpoch2000
 } from './epoch'
 
-// Format
-export { convertDegreesToHMS } from './format'
-
 // Lunar
 export {
   getLunarArgumentOfLatitude,
