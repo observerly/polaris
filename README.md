@@ -1,4 +1,4 @@
-# Polaris
+![@observerly:polaris](https://user-images.githubusercontent.com/84131395/173177742-01f04d4f-899c-4fc6-aeaa-24deddf7d34c.jpg)
 
 Polaris is a fully tree-shakeable zero-dependency Typescript library for performing astrometric and astronomical calculations.
 
