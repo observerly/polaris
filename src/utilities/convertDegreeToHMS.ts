@@ -6,7 +6,11 @@
  * @returns the hours, minutes and seconds components of a degree value.
  */
 export const convertDegreeToHMS = (degree: number): { hrs: number; min: number; sec: number } => {
-  degree = Math.abs(degree)
+  degree = degree % 360
+
+  if (degree < 0) {
+    degree += 360
+  }
 
   const deg = degree / 15
 
