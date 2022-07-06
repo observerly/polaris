@@ -11,5 +11,7 @@ import { convertDegreeToHMS } from './convertDegreeToHMS'
  */
 export const parseDegreeToHMSHumanised = (degree: number): string => {
   const { hrs, min, sec } = convertDegreeToHMS(degree)
-  return `${hrs < 10 ? '0' + hrs : hrs}ʰ ${min}ᵐ ${sec}ˢ`
+  return `${Math.abs(hrs) < 10 ? '0' + Math.abs(hrs) : hrs}ʰ ${
+    min < 10 ? '0' + Math.abs(min) : Math.abs(min)
+  }ᵐ ${sec < 10 ? '0' + Math.abs(sec) : Math.abs(sec)}ˢ`
 }

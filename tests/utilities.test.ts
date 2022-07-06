@@ -1,6 +1,6 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { betelgeuse, spica } from '.'
+import { alpheratz, betelgeuse, spica } from '.'
 
 import {
   convertDegreeToDMS,
@@ -115,6 +115,13 @@ suite('@observerly/polaris Utilities', () => {
       expect(min).toBe(55)
       expect(sec).toBe(10.31)
     })
+
+    it('convertDegreeToHMS to return the correct value for a negative Betelgeuse', () => {
+      const { hrs, min, sec } = convertDegreeToHMS(-betelgeuse.ra)
+      expect(hrs).toBe(18)
+      expect(min).toBe(4)
+      expect(sec).toBe(49.69)
+    })
   })
 
   describe('Parse Degree to Hours, Minutes and Seconds Humanised', () => {
@@ -125,6 +132,11 @@ suite('@observerly/polaris Utilities', () => {
     it('parseDegreeToHMSHumanised to return the correct value for Betelgeuse', () => {
       const humanised = parseDegreeToHMSHumanised(betelgeuse.ra)
       expect(humanised).toBe('05ʰ 55ᵐ 10.31ˢ')
+    })
+
+    it('parseDegreeToHMSHumanised to return the correct value for Betelgeuse', () => {
+      const humanised = parseDegreeToHMSHumanised(alpheratz.ra)
+      expect(humanised).toBe('00ʰ 08ᵐ 23.26ˢ')
     })
   })
 
