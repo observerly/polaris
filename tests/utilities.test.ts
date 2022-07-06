@@ -1,6 +1,6 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { betelgeuse } from '.'
+import { betelgeuse, spica } from '.'
 
 import {
   convertDegreeToDMS,
@@ -133,11 +133,18 @@ suite('@observerly/polaris Utilities', () => {
       expect(convertDegreeToDMS).toBeDefined()
     })
 
-    it('convertDegreeToDMS to be defined', () => {
+    it('convertDegreeToDMS to return the correct value for Betelgeuse', () => {
       const { deg, min, sec } = convertDegreeToDMS(betelgeuse.dec)
       expect(deg).toBe(7)
       expect(min).toBe(24)
       expect(sec).toBe(25.43)
+    })
+
+    it('convertDegreeToDMS to return the correct value for Spica', () => {
+      const { deg, min, sec } = convertDegreeToDMS(spica.dec)
+      expect(deg).toBe(-11)
+      expect(min).toBe(9)
+      expect(sec).toBe(41.04)
     })
   })
 
@@ -149,6 +156,11 @@ suite('@observerly/polaris Utilities', () => {
     it('parseDegreeToHMSHumanised to return the correct value for Betelgeuse', () => {
       const humanised = parseDegreeToDMSHumanised(betelgeuse.dec)
       expect(humanised).toBe('+07° 24\' 25.43"')
+    })
+
+    it('parseDegreeToDMSHumanised to return the correct value for Spica', () => {
+      const humanised = parseDegreeToDMSHumanised(spica.dec)
+      expect(humanised).toBe('-11° 09\' 41.04"')
     })
   })
 

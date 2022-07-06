@@ -6,16 +6,14 @@
  * @returns the degrees, minutes and seconds components of a degree value.
  */
 export const convertDegreeToDMS = (degree: number): { deg: number; min: number; sec: number } => {
-  degree = Math.abs(degree)
+  const deg = Math.floor(Math.abs(degree))
 
-  const deg = Math.floor(degree)
+  const min = Math.floor((Math.abs(degree) - deg) * 60)
 
-  const min = Math.floor((degree - deg) * 60)
-
-  const sec = Math.round((degree - deg - min / 60) * 3600 * 1000) / 1000
+  const sec = Math.round((Math.abs(degree) - deg - min / 60) * 3600 * 1000) / 1000
 
   return {
-    deg: deg,
+    deg: degree < 0 ? -deg : deg,
     min: min,
     sec: sec
   }
