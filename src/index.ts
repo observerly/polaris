@@ -51,6 +51,7 @@ export {
   getLunarMeanLongitude,
   getLunarPhase,
   getLunarPhaseAngle,
+  getLunarPhaseName,
   getMoon
 } from './lunar'
 

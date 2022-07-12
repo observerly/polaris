@@ -11,6 +11,7 @@ import {
   getLunarMeanLongitude,
   getLunarPhase,
   getLunarPhaseAngle,
+  getLunarPhaseName,
   getMoon,
   getSolarMeanAnomaly,
   getNumberOfJulianCenturiesSinceEpoch2000
@@ -140,6 +141,52 @@ suite('@observerly/polaris Lunar', () => {
     it('getLunarPhase should be', () => {
       const phase = getLunarPhase(datetime)
       expect(phase).toBeCloseTo(0.06656)
+    })
+  })
+
+  describe('Lunar Phase Name', () => {
+    it('getLunarPhaseName should be defined', () => {
+      expect(getLunarPhaseName).toBeDefined()
+    })
+
+    it('getLunarPhaseName should be Waxing Crescent for an age between ~1.845 and ~5.537', () => {
+      const phase = getLunarPhaseName(3.45)
+      expect(phase).toBe('Waxing Crescent')
+    })
+
+    it('getLunarPhaseName should be First Quarter for an age between ~5.537 and ~9.228', () => {
+      const phase = getLunarPhaseName(7.3)
+      expect(phase).toBe('First Quarter')
+    })
+
+    it('getLunarPhaseName should be Waxing Gibbous for an age between ~9.228 and ~12.919', () => {
+      const phase = getLunarPhaseName(10.5)
+      expect(phase).toBe('Waxing Gibbous')
+    })
+
+    it('getLunarPhaseName should be Full Moon for an age between ~12.919 and ~16.611', () => {
+      const phase = getLunarPhaseName(13.5)
+      expect(phase).toBe('Full')
+    })
+
+    it('getLunarPhaseName should be Waning Gibbous for an age between ~16.611 and ~20.302', () => {
+      const phase = getLunarPhaseName(18.5)
+      expect(phase).toBe('Waning Gibbous')
+    })
+
+    it('getLunarPhaseName should be Last Quarter for an age between ~20.302 and ~23.994', () => {
+      const phase = getLunarPhaseName(21.5)
+      expect(phase).toBe('Last Quarter')
+    })
+
+    it('getLunarPhaseName should be Waning Crescent for an age between ~23.994 and ~27.685', () => {
+      const phase = getLunarPhaseName(25.5)
+      expect(phase).toBe('Waning Crescent')
+    })
+
+    it('getLunarPhaseName should be New for an age between ~27.685 and ~1.845', () => {
+      const phase = getLunarPhaseName(0)
+      expect(phase).toBe('New')
     })
   })
 
