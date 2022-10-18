@@ -37,11 +37,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install pnpm globally
+        run: npm install -g pnpm
+
       - name: Install project dependencies 👨🏻‍💻
-        run: npm ci
+        run: pnpm install
 
       - name: Build the package ready for publishing
-        run: npm run build
+        run: pnpm run build
 
       - uses: JS-DevTools/npm-publish@v1
         with:

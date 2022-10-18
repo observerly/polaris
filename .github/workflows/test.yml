@@ -42,8 +42,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install pnpm globally
+        run: npm install -g pnpm
+
       - name: Install project dependencies 👨🏻‍💻
-        run: npm ci
+        run: pnpm install
+
+      - name: Build the package ready for publishing
+        run: pnpm run build
 
       - name: Run vitest tests 🧪
-        run: npm run test
+        run: pnpm run test
