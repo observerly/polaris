@@ -6,6 +6,7 @@ export {
   getEclipticObliquityEpoch2000,
   getEquatorialCoordinateProperMotionCorrected,
   getHourAngle,
+  getOrthodromicAngluarDistance,
   getParallacticAngle
 } from './astrometry'
 
