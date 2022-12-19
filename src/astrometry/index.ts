@@ -10,4 +10,6 @@ export { getEquatorialCoordinateProperMotionCorrected } from './getEquatorialCoo
 
 export { getHourAngle } from './getHourAngle'
 
+export { getOrthodromicAngluarDistance } from './getOrthodromicAngluarDistance'
+
 export { getParallacticAngle } from './getParallacticAngle'

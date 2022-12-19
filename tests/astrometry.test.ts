@@ -9,6 +9,7 @@ import {
   getEclipticObliquityEpoch2000,
   getEquatorialCoordinateProperMotionCorrected,
   getHourAngle,
+  getOrthodromicAngluarDistance,
   getParallacticAngle,
   getLocalSiderealTime,
   getNumberOfJulianCenturiesSinceEpoch2000,
@@ -127,6 +128,17 @@ suite('@observerly/polaris Astrometry', () => {
     it('should be an angular separation of approximately 35 degrees between Denebola and Arcturus', () => {
       const separation = getAngularSeparation(denebola, arcturus)
       expect(separation).toBeCloseTo(35.309668)
+    })
+  })
+
+  describe('getOrthodromicAngluarDistance', () => {
+    it('getOrthodromicAngluarDistance should be defined', () => {
+      expect(getOrthodromicAngluarDistance).toBeDefined()
+    })
+
+    it('getOrthodromicAngluarDistance should be', () => {
+      const d = getOrthodromicAngluarDistance(arcturus, spica)
+      expect(d).toBeCloseTo(32.793027)
     })
   })
 })
