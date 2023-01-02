@@ -38,7 +38,10 @@ export {
   getModifiedJulianDate,
   getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
-  getNumberOfJulianCenturiesSinceEpoch2000
+  getNumberOfJulianCenturiesSinceEpoch2000,
+  J1900,
+  J2000,
+  JULIAN_YEAR_IN_DAYS
 } from './epoch'
 
 // Lunar

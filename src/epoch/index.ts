@@ -1,3 +1,5 @@
+export { J1900, J2000, JULIAN_YEAR_IN_DAYS } from './constants'
+
 export { getCurrentYearEnd } from './getCurrentYearEnd'
 
 export { getCurrentYearStart } from './getCurrentYearStart'
