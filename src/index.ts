@@ -59,6 +59,9 @@ export {
   getMoon
 } from './lunar'
 
+// Observer
+export { type UseObserverParams, useObserver, Observer } from './observer'
+
 export { convertHorizontalToStereo, convertStereoToHorizontal } from './projection'
 
 // Solar
