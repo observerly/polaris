@@ -76,7 +76,7 @@ export { type UseObserverParams, useObserver, Observer } from './observer'
 
 /*****************************************************************************************************************/
 
-export { getAirmass } from './observation'
+export { type UseObservationParams, getAirmass, useObservation, Observation } from './observation'
 
 /*****************************************************************************************************************/
 
