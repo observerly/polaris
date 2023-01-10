@@ -62,6 +62,9 @@ export {
 // Observer
 export { type UseObserverParams, useObserver, Observer } from './observer'
 
+// Observation
+export { getAirmass } from './observation'
+
 export { convertHorizontalToStereo, convertStereoToHorizontal } from './projection'
 
 // Solar
