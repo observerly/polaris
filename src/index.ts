@@ -1,4 +1,11 @@
-// Astrometry
+/*****************************************************************************************************************/
+
+// @author         Michael Roberts <michael@observerly.com>
+// @package        @observerly/polaris
+// @license        Copyright © 2021-2023 observerly
+
+/*****************************************************************************************************************/
+
 export {
   getAngularSeparation,
   getEclipticObliquity,
@@ -10,16 +17,18 @@ export {
   getParallacticAngle
 } from './astrometry'
 
+/*****************************************************************************************************************/
+
 import type { Constellation } from './types'
 
-// Constellations
 import * as _constellations from './constellations/iau'
 
 export const constellations: Constellation[] = Object.values(_constellations)
 
 export { getConstellation } from './constellations'
 
-// Coordinates
+/*****************************************************************************************************************/
+
 export {
   convertEclipticToEquatorial,
   convertEquatorialToHorizontal,
@@ -27,7 +36,8 @@ export {
   precessEquatorialCoordinate
 } from './coordinates'
 
-// Epoch
+/*****************************************************************************************************************/
+
 export {
   getCurrentYearEnd,
   getCurrentYearStart,
@@ -44,7 +54,8 @@ export {
   JULIAN_YEAR_IN_DAYS
 } from './epoch'
 
-// Lunar
+/*****************************************************************************************************************/
+
 export {
   getLunarArgumentOfLatitude,
   getLunarEclipticPosition,
@@ -59,15 +70,20 @@ export {
   getMoon
 } from './lunar'
 
-// Observer
+/*****************************************************************************************************************/
+
 export { type UseObserverParams, useObserver, Observer } from './observer'
 
-// Observation
+/*****************************************************************************************************************/
+
 export { getAirmass } from './observation'
+
+/*****************************************************************************************************************/
 
 export { convertHorizontalToStereo, convertStereoToHorizontal } from './projection'
 
-// Solar
+/*****************************************************************************************************************/
+
 export {
   getSolarApparentLongitude,
   getSolarEcliptic,
@@ -83,10 +99,12 @@ export {
   getSun
 } from './solar'
 
-// Terra
+/*****************************************************************************************************************/
+
 export { getEarthEccentricity, getEarthObliquity } from './terra'
 
-// Types
+/*****************************************************************************************************************/
+
 export type {
   Body,
   CartesianCoordinate,
@@ -99,7 +117,8 @@ export type {
   Sun
 } from './types'
 
-// Utilities
+/*****************************************************************************************************************/
+
 export {
   convertDegreeToDMS,
   convertDegreeToHMS,
@@ -111,3 +130,5 @@ export {
   parseDegreeToDMSHumanised,
   parseDegreeToHMSHumanised
 } from './utilities'
+
+/*****************************************************************************************************************/
