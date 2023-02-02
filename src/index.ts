@@ -105,7 +105,14 @@ export { getEarthEccentricity, getEarthObliquity } from './terra'
 
 /*****************************************************************************************************************/
 
-export { SECONDS_IN_DAY, SECONDS_IN_HOUR, SECONDS_IN_MINUTE } from './time'
+export {
+  MILLISECONDS_IN_DAY,
+  MILLISECONDS_IN_HOUR,
+  MILLISECONDS_IN_MINUTE,
+  SECONDS_IN_DAY,
+  SECONDS_IN_HOUR,
+  SECONDS_IN_MINUTE
+} from './time'
 
 /*****************************************************************************************************************/
 
