@@ -19,3 +19,5 @@ export { getNumberOfJulianCenturiesSinceEpoch } from './getNumberOfJulianCenturi
 export { getNumberOfJulianCenturiesSinceEpoch1900 } from './getNumberOfJulianCenturiesSinceEpoch1900'
 
 export { getNumberOfJulianCenturiesSinceEpoch2000 } from './getNumberOfJulianCenturiesSinceEpoch2000'
+
+export { getUniversalTime } from './getUniversalTime'

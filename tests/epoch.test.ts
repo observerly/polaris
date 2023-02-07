@@ -12,7 +12,8 @@ import {
   getModifiedJulianDate,
   getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
-  getNumberOfJulianCenturiesSinceEpoch2000
+  getNumberOfJulianCenturiesSinceEpoch2000,
+  getUniversalTime
 } from '../src'
 
 import { J1900, J2000 } from '../src/epoch/constants'
@@ -134,6 +135,25 @@ suite('@observerly/polaris Epoch', () => {
     it('getLocalSiderealTime should be', () => {
       const LST = getLocalSiderealTime(datetime, longitude)
       expect(LST).toBe(5.099450799019053)
+    })
+  })
+
+  describe('Universal Time', () => {
+    it('getUniversalTime should be defined', () => {
+      expect(getUniversalTime).toBeDefined()
+    })
+
+    it('getUniversalTime should be correct for the default datetime', () => {
+      const GST = 15.463990399019053
+      const UT = getUniversalTime(datetime, GST)
+      expect(Math.abs(UT.getTime() - datetime.getTime())).toBeLessThanOrEqual(300000)
+    })
+
+    it('getUniversalTime should be correct for another datetime', () => {
+      const datetime = new Date('2021-01-01T12:56:11.241Z')
+      const GST = getGreenwhichSiderealTime(datetime)
+      const UT = getUniversalTime(datetime, GST)
+      expect(Math.abs(UT.getTime() - datetime.getTime())).toBeLessThanOrEqual(300000)
     })
   })
 })
