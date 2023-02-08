@@ -1,0 +1,1 @@
+export { getObjectTransit } from './getObjectTransit'
