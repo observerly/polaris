@@ -6,7 +6,7 @@
 
 /*****************************************************************************************************************/
 
-import { J2000 } from './constants'
+import { J1900 } from './constants'
 
 import { getJulianDate } from './getJulianDate'
 
@@ -23,28 +23,38 @@ import { getJulianDate } from './getJulianDate'
  * @returns the Universal Time (UT).
  * @returns { Date }
  */
-export const getUniversalTime = (datetime: Date, GST: number): Date => {
-  // Get the date for 0h UT on the day in question:
-  const d_H0 = new Date(datetime.getFullYear(), datetime.getMonth(), datetime.getDate(), 0, 0, 0, 0)
+export const getUniversalTime = (datetime: Date, GST: number): number => {
+  const currentYear = datetime.getFullYear()
 
-  // Get the Julian Date for 0h UT on the day in question:
-  const JD_0 = getJulianDate(d_H0)
+  // Get the Julian Date at 0h:
+  const JD = getJulianDate(
+    new Date(currentYear, datetime.getMonth(), datetime.getDate(), 0, 0, 0, 0)
+  )
 
-  const S = JD_0 - J2000
+  // Get the Julian Date at 0h on 1st January for the current year:
+  const JD_0 = getJulianDate(new Date(currentYear, 1, 0, 0, 0, 0, 0))
 
-  const T = S / 36525.0
+  // Get the number of days since 1st January for the current year:
+  const days = JD - JD_0
 
-  let T_0 = (6.697374558 + 2400.051336 * T + 0.000025862 * Math.pow(T, 2)) % 24
+  // Get the number of Julian Centuries since 1900:
+  const T = (JD_0 - J1900) / 36525
+
+  const R = 6.6460656 + 2400.051262 * T + 0.00002581 * Math.pow(T, 2)
+
+  const B = 24 - R + 24 * (currentYear - 1900)
+
+  let T_0 = 0.0657098 * days - B
 
   if (T_0 < 0) T_0 += 24
+
+  if (T_0 > 24) T_0 -= 24
 
   let A = GST - T_0
 
   if (A < 0) A += 24
 
-  const UT = (1.002737909 - 1) * A
-
-  return new Date(datetime.getTime() + UT * 60 * 60 * 1000)
+  return 0.99727 * A
 }
 
 /*****************************************************************************************************************/

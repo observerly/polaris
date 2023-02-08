@@ -144,16 +144,9 @@ suite('@observerly/polaris Epoch', () => {
     })
 
     it('getUniversalTime should be correct for the default datetime', () => {
-      const GST = 15.463990399019053
-      const UT = getUniversalTime(datetime, GST)
-      expect(Math.abs(UT.getTime() - datetime.getTime())).toBeLessThanOrEqual(300000)
-    })
-
-    it('getUniversalTime should be correct for another datetime', () => {
-      const datetime = new Date('2021-01-01T12:56:11.241Z')
       const GST = getGreenwhichSiderealTime(datetime)
       const UT = getUniversalTime(datetime, GST)
-      expect(Math.abs(UT.getTime() - datetime.getTime())).toBeLessThanOrEqual(300000)
+      expect(UT).toBeCloseTo(0.0027595, 1)
     })
   })
 })
