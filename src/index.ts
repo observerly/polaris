@@ -89,6 +89,7 @@ export { convertHorizontalToStereo, convertStereoToHorizontal } from './projecti
 export {
   getSolarApparentLongitude,
   getSolarEcliptic,
+  getSolarEclipticLongitude,
   getSolarEquationOfCenter,
   getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,

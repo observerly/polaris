@@ -2,6 +2,8 @@ export { getSolarApparentLongitude } from './getSolarApparentLongitude'
 
 export { getSolarEcliptic } from './getSolarEcliptic'
 
+export { getSolarEclipticLongitude } from './getSolarEclipticLongitude'
+
 export { getSolarEquationOfCenter } from './getSolarEquationOfCenter'
 
 export { getSolarEquatorialPosition } from './getSolarEquatorialPosition'
