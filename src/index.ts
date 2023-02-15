@@ -94,6 +94,7 @@ export {
   getSolarEquationOfCenter,
   getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,
+  getSolarHourAngle,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
   getSolarMeanTime,

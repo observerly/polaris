@@ -8,6 +8,7 @@ import {
   getSolarEquationOfCenter,
   getSolarEquatorialPosition,
   getSolarGeometricMeanLongitude,
+  getSolarHourAngle,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
   getSolarMeanTime,
@@ -20,7 +21,7 @@ import {
   getEarthEccentricity
 } from '../src'
 
-import { datetime, longitude } from '.'
+import { datetime, longitude, latitude, elevation } from '.'
 
 suite('@observerly/polaris Solar', () => {
   describe('Solar Mean Anomaly', () => {
@@ -297,6 +298,30 @@ suite('@observerly/polaris Solar', () => {
       const δ = getSolarDeclination(λ)
 
       expect(δ).toBeCloseTo(8.730823, 1)
+    })
+  })
+
+  describe('Solar Hour Angle', () => {
+    it('getSolarHourAngle should be defined', () => {
+      expect(getSolarHourAngle).toBeDefined()
+    })
+
+    it('getSolarHourAngle should be correct for the given datetime and observer longitude', () => {
+      const datetime = new Date(1992, 3, 12, 0, 0, 0, 0)
+
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+
+      const M = getSolarMeanAnomaly(T)
+
+      const C = getSolarEquationOfCenter(T, M)
+
+      const λ = getSolarEclipticLongitude(M, C)
+
+      const δ = getSolarDeclination(λ)
+
+      const ha = getSolarHourAngle(δ, 0, latitude, elevation)
+
+      expect(ha).toBeCloseTo(93.973461, 1)
     })
   })
 })
