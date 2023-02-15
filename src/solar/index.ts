@@ -12,6 +12,8 @@ export { getSolarEquatorialPosition } from './getSolarEquatorialPosition'
 
 export { getSolarGeometricMeanLongitude } from './getSolarGeometricMeanLongitude'
 
+export { getSolarHourAngle } from './getSolarHourAngle'
+
 export { getSolarMeanAnomaly } from './getSolarMeanAnomaly'
 
 export { getSolarMeanObliquity } from './getSolarMeanObliquity'
