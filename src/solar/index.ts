@@ -12,6 +12,8 @@ export { getSolarMeanAnomaly } from './getSolarMeanAnomaly'
 
 export { getSolarMeanObliquity } from './getSolarMeanObliquity'
 
+export { getSolarMeanTime } from './getSolarMeanTime'
+
 export { getSolarNutation } from './getSolarNutation'
 
 export { getSolarRadialDistance } from './getSolarRadialDistance'

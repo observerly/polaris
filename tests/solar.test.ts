@@ -8,6 +8,7 @@ import {
   getSolarGeometricMeanLongitude,
   getSolarMeanAnomaly,
   getSolarMeanObliquity,
+  getSolarMeanTime,
   getSolarNutation,
   getSolarRadialDistance,
   getSolarTrueAnomaly,
@@ -17,7 +18,7 @@ import {
   getEarthEccentricity
 } from '../src'
 
-import { datetime } from '.'
+import { datetime, longitude } from '.'
 
 suite('@observerly/polaris Solar', () => {
   describe('Solar Mean Anomaly', () => {
@@ -242,6 +243,17 @@ suite('@observerly/polaris Solar', () => {
 
       expect(ra).toBeCloseTo(198.38083)
       expect(dec).toBeCloseTo(-7.78507)
+    })
+  })
+
+  describe('Solar Mean Time', () => {
+    it('getSolarMeanTime should be defined', () => {
+      expect(getSolarMeanTime).toBeDefined()
+    })
+
+    it('getSolarMeanTime should be correct for the given datetime and observer longitude', () => {
+      const meanTime = getSolarMeanTime(datetime, longitude)
+      expect(meanTime).toBeCloseTo(7804.431855816667)
     })
   })
 })
