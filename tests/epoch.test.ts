@@ -13,6 +13,7 @@ import {
   getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000,
+  getNumberOfJulianDaysSinceEpoch2000,
   getUniversalTime
 } from '../src'
 
@@ -135,6 +136,18 @@ suite('@observerly/polaris Epoch', () => {
     it('getLocalSiderealTime should be', () => {
       const LST = getLocalSiderealTime(datetime, longitude)
       expect(LST).toBe(5.099450799019053)
+    })
+  })
+
+  describe('Number Of Julian Days Since Epoch 2000', () => {
+    it('getNumberOfJulianDaysSinceEpoch2000 should be defined', () => {
+      expect(getNumberOfJulianDaysSinceEpoch2000).toBeDefined()
+    })
+
+    it('getNumberOfJulianDaysSinceEpoch2000 should return the correct number of days', () => {
+      const datetime = new Date(2015, 1, 5, 12, 0, 0, 0)
+      const days = getNumberOfJulianDaysSinceEpoch2000(datetime)
+      expect(days).toBe(5514)
     })
   })
 
