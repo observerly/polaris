@@ -49,6 +49,7 @@ export {
   getNumberOfJulianCenturiesSinceEpoch,
   getNumberOfJulianCenturiesSinceEpoch1900,
   getNumberOfJulianCenturiesSinceEpoch2000,
+  getNumberOfJulianDaysSinceEpoch2000,
   getUniversalTime,
   J1900,
   J2000,
