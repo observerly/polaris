@@ -12,7 +12,9 @@ import { getUniversalTime } from '../epoch'
 
 import { MILLISECONDS_IN_HOUR } from '../time'
 
-import { convertDegreeToRadian, convertRadianToDegree } from '../utilities'
+import { convertRadianToDegree } from '../utilities'
+
+import { getDoesObjectRiseOrSet } from './getDoesObjectRiseOrSet'
 
 /*****************************************************************************************************************/
 
@@ -52,19 +54,15 @@ export const getObjectTransit = (
 
   const { latitude, longitude } = geographicCoordinate
 
-  const { ra, dec } = equatorialCoordinate
+  const { ra } = equatorialCoordinate
 
   const ha = ra / 15
 
-  const Ar = Math.sin(convertDegreeToRadian(dec)) / Math.cos(convertDegreeToRadian(latitude))
+  const doesRiseOrSet = getDoesObjectRiseOrSet(equatorialCoordinate, latitude)
 
-  // If |Ar| > 1, the object will never rise or set for the observer.
-  if (Math.abs(Ar) > 1) return noRise
+  if (!doesRiseOrSet) return noRise
 
-  const H1 = Math.tan(convertDegreeToRadian(latitude)) * Math.tan(convertDegreeToRadian(dec))
-
-  // If |H1| > 1, the object will never rise or set for the observer.
-  if (Math.abs(H1) > 1) return noRise
+  const { H1 } = doesRiseOrSet
 
   const H2 = convertRadianToDegree(Math.acos(-H1))
 
