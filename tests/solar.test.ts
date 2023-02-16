@@ -14,10 +14,12 @@ import {
   getSolarMeanTime,
   getSolarNutation,
   getSolarRadialDistance,
+  getSolarTransitJulianDate,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude,
   getSun,
   getNumberOfJulianCenturiesSinceEpoch2000,
+  getNumberOfJulianDaysSinceEpoch2000,
   getEarthEccentricity
 } from '../src'
 
@@ -322,6 +324,30 @@ suite('@observerly/polaris Solar', () => {
       const ha = getSolarHourAngle(δ, 0, latitude, elevation)
 
       expect(ha).toBeCloseTo(93.973461, 1)
+    })
+  })
+
+  describe('Solar Transit Julian Date', () => {
+    it('getSolarTransitJulianDate should be defined', () => {
+      expect(getSolarTransitJulianDate).toBeDefined()
+    })
+
+    it('getSolarTransitJulianDate should be correct for the given datetime and observer longitude', () => {
+      const datetime = new Date(1992, 3, 12, 0, 0, 0, 0)
+
+      const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+
+      const J = getSolarMeanTime(datetime, longitude)
+
+      const M = getSolarMeanAnomaly(T)
+
+      const C = getSolarEquationOfCenter(T, M)
+
+      const λ = getSolarEclipticLongitude(M, C)
+
+      const Jde = getSolarTransitJulianDate(J, M, λ)
+
+      expect(Jde).toBeCloseTo(2448725.432069, 1)
     })
   })
 })

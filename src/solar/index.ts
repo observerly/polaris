@@ -24,6 +24,8 @@ export { getSolarNutation } from './getSolarNutation'
 
 export { getSolarRadialDistance } from './getSolarRadialDistance'
 
+export { getSolarTransitJulianDate } from './getSolarTransitJulianDate'
+
 export { getSolarTrueAnomaly } from './getSolarTrueAnomaly'
 
 export { getSolarTrueGeometricLongitude } from './getSolarTrueGeometricLongitude'
