@@ -100,6 +100,7 @@ export {
   getSolarMeanTime,
   getSolarNutation,
   getSolarRadialDistance,
+  getSolarTransitJulianDate,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude,
   getSun
