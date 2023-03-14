@@ -52,6 +52,7 @@ export {
   getNumberOfJulianDaysSinceEpoch2000,
   getUniversalTime,
   J1900,
+  J1970,
   J2000,
   JULIAN_YEAR_IN_DAYS
 } from './epoch'
