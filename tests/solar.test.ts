@@ -20,7 +20,8 @@ import {
   getSun,
   getNumberOfJulianCenturiesSinceEpoch2000,
   getNumberOfJulianDaysSinceEpoch2000,
-  getEarthEccentricity
+  getEarthEccentricity,
+  getSolarRiseSet
 } from '../src'
 
 import { datetime, longitude, latitude, elevation } from '.'
@@ -348,6 +349,20 @@ suite('@observerly/polaris Solar', () => {
       const Jde = getSolarTransitJulianDate(J, M, λ)
 
       expect(Jde).toBeCloseTo(2448725.432069, 1)
+    })
+  })
+
+  describe('Solar Rise & Set', () => {
+    it('getSolarRiseSet should be defined', () => {
+      expect(getSolarRiseSet).toBeDefined()
+    })
+
+    it('getSolarRiseSet should be correct for the given datetime and observer longitude', () => {
+      const sun = getSolarRiseSet(datetime, 0, { longitude, latitude }, 0)
+
+      expect(sun.rise).toStrictEqual(new Date('2021-05-14T15:55:14.350Z'))
+      expect(sun.set).toStrictEqual(new Date('2021-05-15T04:59:18.401Z'))
+      expect(sun.transit).toStrictEqual(new Date('2021-05-14T22:27:16.375Z'))
     })
   })
 })
