@@ -104,7 +104,8 @@ export {
   getSolarTransitJulianDate,
   getSolarTrueAnomaly,
   getSolarTrueGeometricLongitude,
-  getSun
+  getSun,
+  getSolarRiseSet
 } from './solar'
 
 /*****************************************************************************************************************/
