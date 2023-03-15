@@ -125,7 +125,7 @@ export {
 
 /*****************************************************************************************************************/
 
-export { getDoesObjectRiseOrSet, getObjectTransit } from './transit'
+export { getDoesObjectRiseOrSet, getObjectTransit, isAboveHorizon } from './transit'
 
 /*****************************************************************************************************************/
 
