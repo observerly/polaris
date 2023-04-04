@@ -83,7 +83,7 @@ export { getAirmass } from './observation'
 
 /*****************************************************************************************************************/
 
-export { getPlanetaryMeanAnomaly } from './planets'
+export { getPlanetaryEquationOfCenter, getPlanetaryMeanAnomaly } from './planets'
 
 /*****************************************************************************************************************/
 
