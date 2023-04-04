@@ -215,3 +215,66 @@ export interface Moon extends EquatorialCoordinate, Partial<HorizontalCoordinate
 }
 
 export interface Sun extends EquatorialCoordinate, Partial<HorizontalCoordinate> {}
+
+export interface Planet {
+  /**
+   *
+   * The orbital period of the planet in tropic years
+   *
+   */
+  period: number
+  /**
+   *
+   *
+   * The orbital eccentricity of the planet
+   *
+   */
+  eccentricity: number
+  /**
+   *
+   *
+   * The inclidation of the planet's orbit relative to the ecliptic
+   *
+   */
+  inclination: number
+  /**
+   *
+   *
+   * The semi-major axis of the planet's orbit
+   *
+   */
+  semiMajorAxis: number
+  /**
+   *
+   *
+   * The ecliptic longitude at the epoch of the planet's orbit
+   *
+   */
+  eclipticLongitudeAtTheEpoch: number
+  /**
+   *
+   *
+   * The ecliptic longitude at perihelion of the planet's orbit
+   *
+   */
+  eclipticLongitudeAtPerihelion: number
+  /**
+   *
+   *
+   * The ecliptic longitude at ascending node of the planet's orbit
+   *
+   */
+  eclipticLongitudeAtAscendingNode: number
+  /**
+   *
+   *
+   * Is the planet an inferior planet? (or, an exterior planet)?
+   *
+   * N.B. an inferior planet is a planet that is closer to the Sun than Earth
+   * N.B. an exterior planet is a planet that is further from the Sun than Earth
+   *
+   * @default true
+   *
+   */
+  inferior: boolean
+}
