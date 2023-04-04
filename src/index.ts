@@ -85,6 +85,7 @@ export { getAirmass } from './observation'
 
 export {
   getPlanetaryEquationOfCenter,
+  getPlanetaryHeliocentricEclipticCoordinate,
   getPlanetaryMeanAnomaly,
   getPlanetaryTrueAnomaly
 } from './planets'

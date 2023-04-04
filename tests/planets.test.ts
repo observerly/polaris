@@ -2,9 +2,21 @@ import { describe, expect, it, suite } from 'vitest'
 
 import {
   getPlanetaryEquationOfCenter,
+  getPlanetaryHeliocentricEclipticCoordinate,
   getPlanetaryMeanAnomaly,
   getPlanetaryTrueAnomaly
 } from '../src'
+
+const Venus = {
+  period: 0.615197,
+  eccentricity: 0.0067767,
+  inclination: 3.394676,
+  semiMajorAxis: 0.72332982,
+  eclipticLongitudeAtTheEpoch: 181.9791,
+  eclipticLongitudeAtPerihelion: 131.602467,
+  eclipticLongitudeAtAscendingNode: 76.679842,
+  inferior: true
+}
 
 suite('@observerly/polaris Planets', () => {
   describe('Planetary Mean Anomaly', () => {
@@ -50,6 +62,24 @@ suite('@observerly/polaris Planets', () => {
       const V = getPlanetaryTrueAnomaly(M, C)
 
       expect(V).toBeCloseTo(58.89372)
+    })
+  })
+
+  describe('Planetary Heliocentric Ecliptic Coordinate', () => {
+    it('getPlanetaryHeliocentricEclipticCoordinate should be defined', () => {
+      expect(getPlanetaryHeliocentricEclipticCoordinate).toBeDefined()
+    })
+
+    it('getPlanetaryHeliocentricEclipticCoordinate should be correct for the default datetime for Venus', () => {
+      const datetime = new Date('2016-01-04T00:00:00.000Z')
+
+      const { L, Λ, R } = getPlanetaryHeliocentricEclipticCoordinate(datetime, Venus)
+
+      expect(L).toBeCloseTo(190.500533)
+
+      expect(Λ).toBeCloseTo(3.105199)
+
+      expect(R).toBeCloseTo(0.720735)
     })
   })
 })
