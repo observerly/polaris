@@ -34,6 +34,45 @@ export type EquatorialCoordinate = {
   dec: number
 }
 
+export type HeliocentricEclipticCoordinate = {
+  /**
+   *
+   * Ecliptic longitude or celestial longitude measures the angular distance of an
+   * object along the ecliptic from the primary direction. Like right ascension in
+   * the equatorial coordinate system, the primary direction (0° ecliptic longitude)
+   * points from the Earth towards the Sun at the vernal equinox of the Northern
+   * Hemisphere. Because it is a right-handed system, ecliptic longitude is measured
+   * positive eastwards in the fundamental plane (the ecliptic) from 0° to 360°.
+   * Because of axial precession, the ecliptic longitude of most "fixed stars"
+   * (referred to the equinox of date) increases by about 50.3 arcseconds per year,
+   * or 83.8 arcminutes per century, the speed of general precession. However, for
+   * stars near the ecliptic poles, the rate of change of ecliptic longitude is
+   * dominated by the slight movement of the ecliptic (that is, of the plane of
+   * the earth's orbit), so the rate of change may be anything from minus infinity
+   * to plus infinity depending on the exact position of the star.
+   *
+   */
+  L: number
+  /**
+   *
+   * Ecliptic latitude or celestial latitude measures the angular distance of an
+   * object from the ecliptic towards the north (positive) or south (negative)
+   * ecliptic pole. For example, the north ecliptic pole has a celestial latitude
+   * of +90°. Ecliptic latitude for "fixed stars" is not affected by precession.
+   *
+   */
+  Λ: number
+  /**
+   *
+   * Distance is also necessary for a complete spherical position. Different distance
+   * units are used for different objects. Within the Solar System, astronomical
+   * units are used, and for objects near the Earth, Earth radii or kilometers are
+   * used.
+   *
+   */
+  R: number
+}
+
 export type GeocentricEclipticCoordinate = {
   /**
    *
