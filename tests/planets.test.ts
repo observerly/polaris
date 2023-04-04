@@ -1,6 +1,10 @@
 import { describe, expect, it, suite } from 'vitest'
 
-import { getPlanetaryEquationOfCenter, getPlanetaryMeanAnomaly } from '../src'
+import {
+  getPlanetaryEquationOfCenter,
+  getPlanetaryMeanAnomaly,
+  getPlanetaryTrueAnomaly
+} from '../src'
 
 suite('@observerly/polaris Planets', () => {
   describe('Planetary Mean Anomaly', () => {
@@ -28,6 +32,24 @@ suite('@observerly/polaris Planets', () => {
 
       const C = getPlanetaryEquationOfCenter(M, 0.0067767)
       expect(C).toBeCloseTo(0.655907)
+    })
+  })
+
+  describe('Planetary True Anomaly', () => {
+    it('getPlanetaryTrueAnomaly should be defined', () => {
+      expect(getPlanetaryTrueAnomaly).toBeDefined()
+    })
+
+    it('getPlanetaryTrueAnomaly should be correct for the default datetime for Venus', () => {
+      const datetime = new Date('2016-01-04T00:00:00.000Z')
+
+      const M = getPlanetaryMeanAnomaly(datetime, 0.615197, 181.9791, 131.602467)
+
+      const C = getPlanetaryEquationOfCenter(M, 0.0067767)
+
+      const V = getPlanetaryTrueAnomaly(M, C)
+
+      expect(V).toBeCloseTo(58.89372)
     })
   })
 })
