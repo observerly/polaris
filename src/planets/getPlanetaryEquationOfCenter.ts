@@ -6,8 +6,7 @@
 
 /*****************************************************************************************************************/
 
-import { convertDegreeToRadian } from '../utilities'
-import { getNormalisedDegree } from '../utilities/getNormalisedDegree'
+import { convertDegreeToRadian, getNormalisedDegree } from '../utilities'
 
 /*****************************************************************************************************************/
 
