@@ -9,5 +9,6 @@ export type {
   EquatorialCoordinate,
   GeocentricEclipticCoordinate,
   GeographicCoordinate,
+  HeliocentricEclipticCoordinate,
   HorizontalCoordinate
 } from './coordinates'
