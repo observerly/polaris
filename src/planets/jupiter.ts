@@ -10,15 +10,15 @@ import { type Planet } from '../types'
 
 /*****************************************************************************************************************/
 
-export const Mars = ({
-  period: 1.880848,
-  eccentricity: 0.0933941,
-  inclination: 1.849691,
-  semiMajorAxis: 1.523710,
-  eclipticLongitudeAtTheEpoch: -4.553432,
-  eclipticLongitudeAtPerihelion: -23.943629,
-  eclipticLongitudeAtAscendingNode: 49.559538,
-  inferior: false,
+export const Jupiter = ({
+  period: 11.862615,
+  eccentricity: 0.04839266,
+  inclination: 1.3043975,
+  semiMajorAxis: 5.202887,
+  eclipticLongitudeAtTheEpoch: 34.396441,
+  eclipticLongitudeAtPerihelion: 14.728480,
+  eclipticLongitudeAtAscendingNode: 100.473909,
+  inferior: false
 } as const) satisfies Readonly<Planet>
 
 /*****************************************************************************************************************/
