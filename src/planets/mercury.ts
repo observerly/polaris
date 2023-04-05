@@ -10,7 +10,7 @@ import { type Planet } from '../types'
 
 /*****************************************************************************************************************/
 
-export const Mercury = {
+export const Mercury = ({
   period: 0.2408467,
   eccentricity: 0.20563069,
   inclination: 7.004979,
@@ -19,6 +19,6 @@ export const Mercury = {
   eclipticLongitudeAtPerihelion: 77.457796,
   eclipticLongitudeAtAscendingNode: 48.330766,
   inferior: true
-} as const satisfies Planet
+} as const) satisfies Readonly<Planet>
 
 /*****************************************************************************************************************/
