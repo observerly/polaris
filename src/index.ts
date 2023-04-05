@@ -89,6 +89,7 @@ export {
   getPlanetaryHeliocentricEclipticCoordinate,
   getPlanetaryMeanAnomaly,
   getPlanetaryTrueAnomaly,
+  Mars,
   Mercury,
   Venus
 } from './planets'
