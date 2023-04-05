@@ -87,7 +87,8 @@ export {
   getPlanetaryEquationOfCenter,
   getPlanetaryHeliocentricEclipticCoordinate,
   getPlanetaryMeanAnomaly,
-  getPlanetaryTrueAnomaly
+  getPlanetaryTrueAnomaly,
+  Mercury
 } from './planets'
 
 /*****************************************************************************************************************/
