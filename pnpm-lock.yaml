@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@changesets/cli': ^2.26.0
   '@rollup/plugin-typescript': ^9.0.1
-  '@types/node': ^17.0.32
   '@vitest/coverage-c8': ^0.27.0
   c8: ^7.11.2
   eslint: ^8.15.0
@@ -15,14 +14,13 @@ specifiers:
   prettier: 2.5.1
   rollup: ^3.2.3
   tslib: ^2.4.0
-  typescript: ^4.6.4
+  typescript: 4.9.5
   vite: ^3.1.8
   vitest: ^0.24.3
 
 devDependencies:
   '@changesets/cli': 2.26.0
-  '@rollup/plugin-typescript': 9.0.1_bvn3ed5hy3sfde644tygjdj4ia
-  '@types/node': 17.0.45
+  '@rollup/plugin-typescript': 9.0.2_644teuk2falnbskyi3q2dgu3va
   '@vitest/coverage-c8': 0.27.0
   c8: 7.12.0
   eslint: 8.25.0
@@ -34,7 +32,7 @@ devDependencies:
   prettier: 2.5.1
   rollup: 3.2.3
   tslib: 2.4.0
-  typescript: 4.8.4
+  typescript: 4.9.5
   vite: 3.1.8
   vitest: 0.24.3
 
@@ -373,8 +371,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@rollup/plugin-typescript/9.0.1_bvn3ed5hy3sfde644tygjdj4ia:
-    resolution: {integrity: sha512-fj+CTk8+HvFCEwwDQdNgWd0lIJVXtMQ0Z3vH/ZgzFSbK2s1zs5wjZrjzrhViTTN+UF49+P69/tybgKRdGHpj/Q==}
+  /@rollup/plugin-typescript/9.0.2_644teuk2falnbskyi3q2dgu3va:
+    resolution: {integrity: sha512-/sS93vmHUMjzDUsl5scNQr1mUlNE1QjBBvOhmRwJCH8k2RRhDIm3c977B3wdu3t3Ap17W6dDeXP3hj1P1Un1bA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0
@@ -386,19 +384,26 @@ packages:
       tslib:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 4.2.1
+      '@rollup/pluginutils': 5.0.2_rollup@3.2.3
       resolve: 1.22.1
       rollup: 3.2.3
       tslib: 2.4.0
-      typescript: 4.8.4
+      typescript: 4.9.5
     dev: true
 
-  /@rollup/pluginutils/4.2.1:
-    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
-    engines: {node: '>= 8.0.0'}
+  /@rollup/pluginutils/5.0.2_rollup@3.2.3:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
     dependencies:
+      '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 3.2.3
     dev: true
 
   /@types/chai-subset/1.3.3:
@@ -413,6 +418,10 @@ packages:
 
   /@types/chai/4.3.4:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
+    dev: true
+
+  /@types/estree/1.0.0:
+    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/is-ci/3.0.0:
@@ -3082,8 +3091,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
