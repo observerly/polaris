@@ -5,3 +5,5 @@ export { getPlanetaryHeliocentricEclipticCoordinate } from './getPlanetaryHelioc
 export { getPlanetaryMeanAnomaly } from './getPlanetaryMeanAnomaly'
 
 export { getPlanetaryTrueAnomaly } from './getPlanetaryTrueAnomaly'
+
+export { Mercury } from './mercury'
