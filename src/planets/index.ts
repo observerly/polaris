@@ -14,4 +14,6 @@ export { Mars } from './mars'
 
 export { Mercury } from './mercury'
 
+export { Saturn } from './saturn'
+
 export { Venus } from './venus'
