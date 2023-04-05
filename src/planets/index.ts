@@ -1,3 +1,5 @@
+export { Earth } from './earth'
+
 export { getPlanetaryEquationOfCenter } from './getPlanetaryEquationOfCenter'
 
 export { getPlanetaryHeliocentricEclipticCoordinate } from './getPlanetaryHeliocentricEclipticCoordinate'
