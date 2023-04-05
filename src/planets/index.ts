@@ -8,6 +8,8 @@ export { getPlanetaryMeanAnomaly } from './getPlanetaryMeanAnomaly'
 
 export { getPlanetaryTrueAnomaly } from './getPlanetaryTrueAnomaly'
 
+export { Jupiter } from './jupiter'
+
 export { Mars } from './mars'
 
 export { Mercury } from './mercury'
