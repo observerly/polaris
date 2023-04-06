@@ -30,7 +30,7 @@ export const convertEclipticToEquatorial = (
 
   β = convertDegreeToRadian(β)
 
-  const ra = Math.atan((Math.sin(λ) * Math.cos(ɛ) - Math.tan(β) * Math.sin(ɛ)) / Math.cos(λ))
+  const ra = Math.atan2(Math.sin(λ) * Math.cos(ɛ) - Math.tan(β) * Math.sin(ɛ), Math.cos(λ))
 
   const dec = Math.asin(Math.sin(β) * Math.cos(ɛ) + Math.cos(β) * Math.sin(ɛ) * Math.sin(λ))
 
