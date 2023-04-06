@@ -92,6 +92,7 @@ export {
   Jupiter,
   Mars,
   Mercury,
+  Neptune,
   Saturn,
   Uranus,
   Venus
