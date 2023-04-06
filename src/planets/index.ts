@@ -2,6 +2,8 @@ export { Earth } from './earth'
 
 export { getPlanetaryEquationOfCenter } from './getPlanetaryEquationOfCenter'
 
+export { getPlanetaryHeliocentricAdjustedEclipticCoordinate } from './getPlanetaryHeliocentricAdjustedEclipticCoordinate'
+
 export { getPlanetaryHeliocentricEclipticCoordinate } from './getPlanetaryHeliocentricEclipticCoordinate'
 
 export { getPlanetaryMeanAnomaly } from './getPlanetaryMeanAnomaly'
