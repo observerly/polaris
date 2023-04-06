@@ -93,6 +93,7 @@ export {
   Mars,
   Mercury,
   Saturn,
+  Uranus,
   Venus
 } from './planets'
 
