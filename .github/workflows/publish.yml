@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [17]
+        node: [18]
 
     steps:
       - name: Checkout 🛎
@@ -38,7 +38,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install pnpm globally
-        run: npm install -g pnpm
+        run: npm install -g pnpm@7.30.0
 
       - name: Install project dependencies 👨🏻‍💻
         run: pnpm install
