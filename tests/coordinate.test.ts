@@ -4,6 +4,7 @@ import { betelgeuse, datetime, observer } from '.'
 
 import {
   convertEclipticToEquatorial,
+  convertEclipticToHorizontal,
   convertEquatorialToHorizontal,
   convertHorizontalToEquatorial,
   getLunarEclipticPosition,
@@ -11,7 +12,7 @@ import {
 } from '../src'
 
 suite('@observerly/polaris Coodinate', () => {
-  describe('Equatorial to Horizontal conversion', () => {
+  describe('Ecliptic to Equatorial conversion', () => {
     it('convertEclipticToEquatorial should be defined', () => {
       expect(convertEclipticToEquatorial).toBeDefined()
     })
@@ -20,6 +21,32 @@ suite('@observerly/polaris Coodinate', () => {
       const { ra, dec } = convertEclipticToEquatorial(getLunarEclipticPosition(datetime), datetime)
       expect(ra).toBeCloseTo(76.1983325)
       expect(dec).toBeCloseTo(23.447219)
+    })
+  })
+
+  describe('Ecliptic to Horizontal conversion', () => {
+    it('convertEclipticToHorizontal should be defined', () => {
+      expect(convertEclipticToHorizontal).toBeDefined()
+    })
+
+    it('convertEclipticToHorizontal should return the correct Horizontal coordinate of the Moon', () => {
+      const { alt, az } = convertEclipticToHorizontal(
+        getLunarEclipticPosition(datetime),
+        observer,
+        datetime
+      )
+
+      const horizontalCoordinate = convertEquatorialToHorizontal(
+        {
+          ra: 76.1983325,
+          dec: 23.447219
+        },
+        observer,
+        datetime
+      )
+
+      expect(alt).toBeCloseTo(horizontalCoordinate.alt, 1)
+      expect(az).toBeCloseTo(horizontalCoordinate.az, 1)
     })
   })
 

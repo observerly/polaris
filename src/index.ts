@@ -31,6 +31,7 @@ export { getConstellation } from './constellations'
 
 export {
   convertEclipticToEquatorial,
+  convertEclipticToHorizontal,
   convertEquatorialToHorizontal,
   convertHorizontalToEquatorial,
   precessEquatorialCoordinate
