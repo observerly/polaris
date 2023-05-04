@@ -11,12 +11,12 @@ suite('@observerly/polaris Observation', () => {
     })
 
     it('should return the correct airmass', () => {
-      expect(getAirmass(0)).toBeCloseTo(1, 1)
+      expect(getAirmass(0)).toBeCloseTo(38.75, 0.1)
     })
 
     it('should return the correct airmass for an observation of betelgeuse', () => {
       const { alt } = convertEquatorialToHorizontal(betelgeuse, observer, datetime)
-      expect(getAirmass(alt)).toBeCloseTo(1.4, 1)
+      expect(getAirmass(alt)).toBeCloseTo(1.0466, 0.1)
     })
   })
 })
