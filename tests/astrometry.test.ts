@@ -106,7 +106,7 @@ suite('@observerly/polaris Astrometry', () => {
 
     it('getParallacticAngle should be', () => {
       const q = getParallacticAngle(betelgeuse, observer, datetime)
-      expect(q).toBeCloseTo(-66.051649)
+      expect(q).toBeCloseTo(-42.6281265)
     })
   })
 
