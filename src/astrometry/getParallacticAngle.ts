@@ -23,8 +23,10 @@ export const getParallacticAngle = (
   // Local Sidereal time at given instant of observation:
   const LST = getLocalSiderealTime(datetime, observer.longitude)
 
+  const ha = getHourAngle(equatorialCoordinate.ra, LST)
+
   // Hour Angle at given instance converted to radians:
-  const H = convertDegreeToRadian(getHourAngle(LST, equatorialCoordinate.ra))
+  const H = convertDegreeToRadian(ha)
 
   // Observer's latitude converted to radians:
   const φ = convertDegreeToRadian(observer.latitude)
@@ -33,7 +35,7 @@ export const getParallacticAngle = (
   const δ = convertDegreeToRadian(equatorialCoordinate.dec)
 
   // Compute the parallactic coordinate:
-  const q = Math.atan(Math.sin(H) / (Math.tan(φ) * Math.cos(δ) - Math.sin(δ) * Math.cos(H)))
+  const q = Math.atan2(Math.sin(H), Math.tan(φ) * Math.cos(δ) - Math.sin(δ) * Math.cos(H))
 
   return convertRadianToDegree(q)
 }
