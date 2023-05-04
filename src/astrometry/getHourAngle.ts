@@ -12,5 +12,5 @@ export const getHourAngle = (ra: number, LST: number): number => {
   // If the hour angle is less than zero, ensure we rotate by 2π radians (360 degrees)
   if (ha < 0) ha += 360
 
-  return ha
+  return ha % 360
 }
