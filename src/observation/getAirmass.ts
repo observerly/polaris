@@ -27,7 +27,5 @@ import { convertDegreeToRadian } from '../utilities'
  * @returns {number} - airmass
  */
 export const getAirmass = (altitude: number): number => {
-  const h = convertDegreeToRadian(altitude)
-
-  return 1 / Math.sin(h + 244 / (165 + 47 * Math.pow(h, 1.1)))
+  return 1 / Math.sin(convertDegreeToRadian(altitude + 244 / (165 + 47 * Math.pow(altitude, 1.1))))
 }
