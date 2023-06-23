@@ -9,6 +9,7 @@ import {
   getLunarMeanAnomaly,
   getLunarMeanEclipticLongitudeOfTheAscendingNode,
   getLunarMeanElongation,
+  getLunarMeanGeometricLongitude,
   getLunarMeanLongitude,
   getLunarPhase,
   getLunarPhaseAngle,
@@ -70,6 +71,17 @@ suite('@observerly/polaris Lunar', () => {
     it('getLunarMeanLongitude should be', () => {
       const L = getLunarMeanLongitude(T)
       expect(L).toBeCloseTo(134.290182)
+    })
+  })
+
+  describe('Lunar Mean Gemoetric Longitude', () => {
+    it('getLunarMeanGeometricLongitude should be defined', () => {
+      expect(getLunarMeanGeometricLongitude).toBeDefined()
+    })
+
+    it('getLunarMeanGeometricLongitude should be', () => {
+      const l = getLunarMeanGeometricLongitude(datetime)
+      expect(l).toBeCloseTo(80.32626508452813)
     })
   })
 
