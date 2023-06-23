@@ -47,6 +47,36 @@ export { getLunarMeanLongitude } from './getLunarMeanLongitude'
 
 /**
  *
+ * The mean lunar geometric longitude is the ecliptic longitude of the
+ * Moon if the Moon's orbit where free of perturbations
+ *
+ * @param datetime The datetime object to convert.
+ * @returns the mean lunar geometric longitude (in degrees)
+ */
+export const getLunarMeanGeometricLongitude = (datetime: Date) => {
+  // Calculate the number of centuries since J2000.0:
+  const T = getNumberOfJulianCenturiesSinceEpoch2000(datetime)
+
+  let l =
+    (218.3164477 +
+      481267.88123421 * T -
+      0.0015786 * Math.pow(T, 2) +
+      Math.pow(T, 3) / 538841 -
+      Math.pow(T, 4) / 65194000) %
+    360
+
+  // Correct for negative angles
+  if (l < 0) {
+    l += 360
+  }
+
+  return l
+}
+
+/*****************************************************************************************************************/
+
+/**
+ *
  * The mean lunar ecliptic longitude of the ascending node is the angle where
  * the Moon's orbit crosses the ecliptic
  *
