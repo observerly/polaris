@@ -6,173 +6,31 @@
 
 /*****************************************************************************************************************/
 
-export {
-  getAngularSeparation,
-  getEclipticObliquity,
-  getEclipticObliquityCorrected,
-  getEclipticObliquityEpoch2000,
-  getEquatorialCoordinateProperMotionCorrected,
-  getHourAngle,
-  getOrthodromicAngluarDistance,
-  getParallacticAngle
-} from './astrometry'
-
-/*****************************************************************************************************************/
-
 import type { Constellation } from './types'
 
 import * as _constellations from './constellations/iau'
 
 export const constellations: Constellation[] = Object.values(_constellations)
 
-export { getConstellation } from './constellations'
+/*****************************************************************************************************************/
+
+export * from './astrometry'
+export * from './constellations'
+export * from './coordinates'
+export * from './epoch'
+export * from './lunar'
+export * from './observer'
+export * from './observation'
+export * from './planets'
+export * from './projection'
+export * from './solar'
+export * from './terra'
+export * from './time'
+export * from './transit'
+export * from './utilities'
 
 /*****************************************************************************************************************/
 
-export {
-  convertEclipticToEquatorial,
-  convertEclipticToHorizontal,
-  convertEquatorialToHorizontal,
-  convertHorizontalToEquatorial,
-  precessEquatorialCoordinate
-} from './coordinates'
-
-/*****************************************************************************************************************/
-
-export {
-  getCurrentYearEnd,
-  getCurrentYearStart,
-  getGreenwhichSiderealTime,
-  getJulianDate,
-  getJulianYearInSeconds,
-  getLocalSiderealTime,
-  getModifiedJulianDate,
-  getNumberOfJulianCenturiesSinceEpoch,
-  getNumberOfJulianCenturiesSinceEpoch1900,
-  getNumberOfJulianCenturiesSinceEpoch2000,
-  getNumberOfJulianDaysSinceEpoch2000,
-  getUniversalTime,
-  J1900,
-  J1970,
-  J2000,
-  JULIAN_YEAR_IN_DAYS
-} from './epoch'
-
-/*****************************************************************************************************************/
-
-export {
-  getLunarArgumentOfLatitude,
-  getLunarEclipticPosition,
-  getLunarEquatorialPosition,
-  getLunarIlluminatedFraction,
-  getLunarMeanAnomaly,
-  getLunarMeanElongation,
-  getLunarMeanLongitude,
-  getLunarPhase,
-  getLunarPhaseAngle,
-  getLunarPhaseName,
-  getMoon
-} from './lunar'
-
-/*****************************************************************************************************************/
-
-export { type UseObserverParams, useObserver, Observer } from './observer'
-
-/*****************************************************************************************************************/
-
-export { getAirmass } from './observation'
-
-/*****************************************************************************************************************/
-
-export {
-  Earth,
-  getPlanetaryEclipticCoordinate,
-  getPlanetaryEquationOfCenter,
-  getPlanetaryHeliocentricAdjustedEclipticCoordinate,
-  getPlanetaryHeliocentricEclipticCoordinate,
-  getPlanetaryMeanAnomaly,
-  getPlanetaryTrueAnomaly,
-  Jupiter,
-  Mars,
-  Mercury,
-  Neptune,
-  Saturn,
-  Uranus,
-  Venus
-} from './planets'
-
-/*****************************************************************************************************************/
-
-export { convertHorizontalToStereo, convertStereoToHorizontal } from './projection'
-
-/*****************************************************************************************************************/
-
-export {
-  getSolarApparentLongitude,
-  getSolarDeclination,
-  getSolarEcliptic,
-  getSolarEclipticLongitude,
-  getSolarEquationOfCenter,
-  getSolarEquatorialPosition,
-  getSolarGeometricMeanLongitude,
-  getSolarHourAngle,
-  getSolarMeanAnomaly,
-  getSolarMeanObliquity,
-  getSolarMeanTime,
-  getSolarNutation,
-  getSolarRadialDistance,
-  getSolarTransitJulianDate,
-  getSolarTrueAnomaly,
-  getSolarTrueGeometricLongitude,
-  getSun,
-  getSolarRiseSet
-} from './solar'
-
-/*****************************************************************************************************************/
-
-export { getEarthEccentricity, getEarthObliquity } from './terra'
-
-/*****************************************************************************************************************/
-
-export {
-  MILLISECONDS_IN_DAY,
-  MILLISECONDS_IN_HOUR,
-  MILLISECONDS_IN_MINUTE,
-  SECONDS_IN_DAY,
-  SECONDS_IN_HOUR,
-  SECONDS_IN_MINUTE
-} from './time'
-
-/*****************************************************************************************************************/
-
-export { getDoesObjectRiseOrSet, getObjectTransit, isAboveHorizon } from './transit'
-
-/*****************************************************************************************************************/
-
-export type {
-  Body,
-  CartesianCoordinate,
-  Constellation,
-  ConstellationNancyRoman,
-  EquatorialCoordinate,
-  GeographicCoordinate,
-  HorizontalCoordinate,
-  Moon,
-  Sun
-} from './types'
-
-/*****************************************************************************************************************/
-
-export {
-  convertDegreeToDMS,
-  convertDegreeToHMS,
-  convertDegreeToHour,
-  convertDegreeToRadian,
-  convertRadianToDegree,
-  getNormalisedDegree,
-  normaliseStellarMagnitude,
-  parseDegreeToDMSHumanised,
-  parseDegreeToHMSHumanised
-} from './utilities'
+export * from './types'
 
 /*****************************************************************************************************************/
