@@ -174,6 +174,11 @@ suite('@observerly/polaris Utilities', () => {
       const humanised = parseDegreeToDMSHumanised(spica.dec)
       expect(humanised).toBe('-11° 09\' 41.04"')
     })
+
+    it('parseDegreeToDMSHumanised to return the correct value for Spica', () => {
+      const humanised = parseDegreeToDMSHumanised(-2)
+      expect(humanised).toBe('-02° 00\' 00"')
+    })
   })
 
   describe('Normalise Stellar Magntidue', () => {
