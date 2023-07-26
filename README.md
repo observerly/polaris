@@ -22,7 +22,7 @@ import { getLocalSiderealTime, getHourAngle } from '@observerly/polaris'
 
 ### Acknowledgements
 
-This package makes use of algrotihms and methods outlined in the following two publications:
+This package makes use of algorithms and methods outlined in the following two publications:
 
 - Meeus, J., 1991 "Astronomical Algorithms", 2nd ed., Willmann-Bell, Inc. Richmond, Va
 
